@@ -99,7 +99,7 @@ python scripts/generate_ascii.py /path/to/original/perfil.jpg --columns 160 --in
 
 `build_assets.py` verifies and vendors upstream icons, generates the per-area gradient headers and rebuilds the technology roadmap. It requires network access; the hourly refresh does not depend on icon or badge services. When adding a new configured area, rebuild its header before publishing. The original photograph stays outside the repository and is not needed by Actions.
 
-HTML tables use GitHub's own styling. Custom CSS and scripts are not supported in a profile README, so gradients live in SVG headers. Text wraps in each cell, and long repository names and topics contain safe HTML word-break opportunities. The local preview uses GitHub's published Markdown stylesheet; GitHub's rendered README is authoritative.
+HTML tables use GitHub's own styling. Custom CSS and scripts are not supported in a profile README, so gradients live in SVG headers. Normal text wraps in each cell; unusually long unbroken names or topics may require GitHub's native horizontal table scrolling on narrow screens. The two-column table does not become a single-column CSS grid on phones. The local preview uses GitHub's published Markdown stylesheet; GitHub's rendered README is authoritative.
 
 ## References
 

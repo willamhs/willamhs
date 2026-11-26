@@ -160,7 +160,7 @@ def grouped_repositories(repos: list[dict], config: dict) -> dict[str, list[dict
 
 
 def project_block(repo: dict, config: dict) -> str:
-    name = '<wbr />'.join(escape(repo["name"][i:i+12]) for i in range(0,len(repo["name"]),12))
+    name = escape(repo["name"])
     url = escape(repo["html_url"], quote=True)
     featured = repo["full_name"].lower() in {x.lower() for x in config.get("featured", [])}
     label = " &nbsp; <sub>FEATURED</sub>" if featured else ""
@@ -171,7 +171,7 @@ def project_block(repo: dict, config: dict) -> str:
     desc = escape(repo["description"]) if repo["description"] else "<em>No repository description provided.</em>"
     tech = sorted({config["topic_technologies"][t] for t in repo["topics"] if t in config["topic_technologies"]} | ({language} if language else set()))
     technologies = escape(" · ".join(tech)) if tech else "Not identified in public metadata"
-    topics = " ".join('<code>'+'<wbr />'.join(escape(t[i:i+12]) for i in range(0,len(t),12))+'</code>' for t in sorted(repo["topics"])) or "Not set"
+    topics = " ".join(f'<code>{escape(t)}</code>' for t in sorted(repo["topics"])) or "Not set"
     demo = safe_url(repo.get("homepage"))
     demo_link = f' &nbsp; · &nbsp; <a href="{escape(demo, quote=True)}">Live demo ↗</a>' if demo else ""
     return (f'<h4><a href="{url}">{name}</a>{label}</h4>\n'

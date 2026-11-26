@@ -125,12 +125,12 @@ Data, AI, cloud and software are connected disciplines. Each area below has the 
 <h3>Other Projects</h3>
 <p>Public repositories waiting for a recognized specialty topic.</p>
 <p><strong>11 public projects</strong></p>
-<h4><a href="https://github.com/willamhs/flowers-amarillas">flowers-amar<wbr />illas</a></h4>
+<h4><a href="https://github.com/willamhs/flowers-amarillas">flowers-amarillas</a></h4>
 <p><em>No repository description provided.</em></p>
 <p><img src="assets/icons/tech/javascript.svg" width="18" height="18" alt="" /> JavaScript &nbsp; · &nbsp; 0 stars &nbsp; · &nbsp; Updated 2026-09-21 &nbsp; · &nbsp; <a href="https://flowers-amarillas.vercel.app">Live demo ↗</a><br />
 <sub><strong>Technologies:</strong> JavaScript<br /><strong>Topics:</strong> Not set</sub></p>
 
-<h4><a href="https://github.com/willamhs/FLORES-AMARILLAS">FLORES-AMARI<wbr />LLAS</a></h4>
+<h4><a href="https://github.com/willamhs/FLORES-AMARILLAS">FLORES-AMARILLAS</a></h4>
 <p><em>No repository description provided.</em></p>
 <p><img src="assets/icons/tech/javascript.svg" width="18" height="18" alt="" /> JavaScript &nbsp; · &nbsp; 0 stars &nbsp; · &nbsp; Updated 2026-09-21 &nbsp; · &nbsp; <a href="https://flores-amarillas-amber.vercel.app">Live demo ↗</a><br />
 <sub><strong>Technologies:</strong> JavaScript<br /><strong>Topics:</strong> Not set</sub></p>
@@ -143,10 +143,10 @@ Data, AI, cloud and software are connected disciplines. Each area below has the 
 <h4><a href="https://github.com/willamhs/WillamDevCS">WillamDevCS</a></h4>
 <p>Config files for my GitHub profile.</p>
 <p>Language not reported &nbsp; · &nbsp; 0 stars &nbsp; · &nbsp; Updated 2026-01-16 &nbsp; · &nbsp; <a href="https://github.com/willamhs">Live demo ↗</a><br />
-<sub><strong>Technologies:</strong> Not identified in public metadata<br /><strong>Topics:</strong> <code>config</code> <code>github-confi<wbr />g</code></sub></p>
+<sub><strong>Technologies:</strong> Not identified in public metadata<br /><strong>Topics:</strong> <code>config</code> <code>github-config</code></sub></p>
 
 <details><summary>Explore 7 more projects</summary>
-<h4><a href="https://github.com/willamhs/analisissentimientos">analisissent<wbr />imientos</a></h4>
+<h4><a href="https://github.com/willamhs/analisissentimientos">analisissentimientos</a></h4>
 <p><em>No repository description provided.</em></p>
 <p>Language not reported &nbsp; · &nbsp; 0 stars &nbsp; · &nbsp; Updated 2025-12-05<br />
 <sub><strong>Technologies:</strong> Not identified in public metadata<br /><strong>Topics:</strong> Not set</sub></p>
@@ -156,27 +156,27 @@ Data, AI, cloud and software are connected disciplines. Each area below has the 
 <p><img src="assets/icons/tech/javascript.svg" width="18" height="18" alt="" /> JavaScript &nbsp; · &nbsp; 0 stars &nbsp; · &nbsp; Updated 2025-07-17<br />
 <sub><strong>Technologies:</strong> JavaScript<br /><strong>Topics:</strong> Not set</sub></p>
 
-<h4><a href="https://github.com/willamhs/crypto-recommender">crypto-recom<wbr />mender</a></h4>
+<h4><a href="https://github.com/willamhs/crypto-recommender">crypto-recommender</a></h4>
 <p><em>No repository description provided.</em></p>
 <p><img src="assets/icons/tech/typescript.svg" width="18" height="18" alt="" /> TypeScript &nbsp; · &nbsp; 0 stars &nbsp; · &nbsp; Updated 2025-07-10<br />
 <sub><strong>Technologies:</strong> TypeScript<br /><strong>Topics:</strong> Not set</sub></p>
 
-<h4><a href="https://github.com/willamhs/Holme-frontend">Holme-fronte<wbr />nd</a></h4>
+<h4><a href="https://github.com/willamhs/Holme-frontend">Holme-frontend</a></h4>
 <p><em>No repository description provided.</em></p>
 <p><img src="assets/icons/tech/typescript.svg" width="18" height="18" alt="" /> TypeScript &nbsp; · &nbsp; 0 stars &nbsp; · &nbsp; Updated 2024-11-21<br />
 <sub><strong>Technologies:</strong> TypeScript<br /><strong>Topics:</strong> Not set</sub></p>
 
-<h4><a href="https://github.com/willamhs/HoldMe-APIRESTFULL">HoldMe-APIRE<wbr />STFULL</a></h4>
+<h4><a href="https://github.com/willamhs/HoldMe-APIRESTFULL">HoldMe-APIRESTFULL</a></h4>
 <p><em>No repository description provided.</em></p>
 <p><img src="assets/icons/tech/java.svg" width="18" height="18" alt="" /> Java &nbsp; · &nbsp; 0 stars &nbsp; · &nbsp; Updated 2024-11-19<br />
 <sub><strong>Technologies:</strong> Java<br /><strong>Topics:</strong> Not set</sub></p>
 
-<h4><a href="https://github.com/willamhs/AnalsisSentimientos">AnalsisSenti<wbr />mientos</a></h4>
+<h4><a href="https://github.com/willamhs/AnalsisSentimientos">AnalsisSentimientos</a></h4>
 <p><em>No repository description provided.</em></p>
 <p>Language not reported &nbsp; · &nbsp; 0 stars &nbsp; · &nbsp; Updated 2024-11-18<br />
 <sub><strong>Technologies:</strong> Not identified in public metadata<br /><strong>Topics:</strong> Not set</sub></p>
 
-<h4><a href="https://github.com/willamhs/reservation_system_api">reservation_<wbr />system_api</a></h4>
+<h4><a href="https://github.com/willamhs/reservation_system_api">reservation_system_api</a></h4>
 <p><em>No repository description provided.</em></p>
 <p><img src="assets/icons/tech/java.svg" width="18" height="18" alt="" /> Java &nbsp; · &nbsp; 0 stars &nbsp; · &nbsp; Updated 2024-08-21<br />
 <sub><strong>Technologies:</strong> Java<br /><strong>Topics:</strong> Not set</sub></p>
