@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1120" height="420" viewBox="0 0 1120 420" role="img" aria-labelledby="visual-title visual-desc">
 <title id="visual-title">Meet Willam Huaman</title><desc id="visual-desc">Computer Science background, based in Peru. Focused on learning AI Engineering and sharing data and AI knowledge. The portrait is actual ASCII derived from Willam&#x27;s supplied photograph.</desc>
-<rect x="1" y="1" width="1118" height="418" rx="20" fill="#000000" stroke="#1E293B"/>
+<defs><linearGradient id="about-blue"><stop stop-color="#F0F6FF"/><stop offset="1" stop-color="#DFEBFF"/></linearGradient></defs><rect x="1" y="1" width="1118" height="418" rx="20" fill="url(#about-blue)" stroke="#CDDEF7"/>
 <g font-family="Arial,Helvetica,sans-serif"><text x="44" y="55" font-size="12" letter-spacing="2.2" fill="#3B82F6" font-weight="700">THE PERSON BEHIND THE DATA</text>
-<text x="44" y="128" font-size="43" font-weight="700" letter-spacing="-1" fill="#F8FAFC">Curious by nature.</text><text x="44" y="180" font-size="43" font-weight="700" letter-spacing="-1" fill="#F8FAFC">Building with purpose.</text>
-<text x="46" y="237" font-size="20" fill="#B5C0D0">Computer Science background. Based in Peru.</text>
-<text x="46" y="268" font-size="20" fill="#B5C0D0">Growing toward AI Engineering through practical learning.</text>
-<text x="46" y="299" font-size="20" fill="#B5C0D0">Sharing the journey through Willam | Data &amp; AI.</text>
+<text x="44" y="128" font-size="43" font-weight="700" letter-spacing="-1" fill="#102B55">Curious by nature.</text><text x="44" y="180" font-size="43" font-weight="700" letter-spacing="-1" fill="#102B55">Building with purpose.</text>
+<text x="46" y="237" font-size="20" fill="#48658B">Computer Science background. Based in Peru.</text>
+<text x="46" y="268" font-size="20" fill="#48658B">Growing toward AI Engineering through practical learning.</text>
+<text x="46" y="299" font-size="20" fill="#48658B">Sharing the journey through Willam | Data &amp; AI.</text>
 <rect x="45" y="346" width="62" height="4" rx="2" fill="#2563EB"/><rect x="113" y="346" width="26" height="4" rx="2" fill="#60A5FA"/>
 </g>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1104.0 1192" role="img" aria-labelledby="portrait-title portrait-desc" x="758" y="24" width="300" height="370">

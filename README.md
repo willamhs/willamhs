@@ -26,10 +26,10 @@
 ## About me
 
 <picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/banners/about-dark-mobile.svg?v=5" />
-  <source media="(max-width: 600px)" srcset="assets/banners/about-light-mobile.svg?v=5" />
-  <source media="(prefers-color-scheme: dark)" srcset="assets/banners/about-dark.svg?v=5" />
-  <img src="assets/banners/about-light.svg?v=5" width="100%" alt="Willam Huamán. Curious by nature. Building with purpose. Computer Science background, based in Peru, growing toward AI Engineering. Portrait derived from my real photograph using ASCII characters." />
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/banners/about-dark-mobile.svg?v=6" />
+  <source media="(max-width: 600px)" srcset="assets/banners/about-light-mobile.svg?v=6" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banners/about-dark.svg?v=6" />
+  <img src="assets/banners/about-light.svg?v=6" width="100%" alt="Willam Huamán. Curious by nature. Building with purpose. Computer Science background, based in Peru, growing toward AI Engineering. Portrait derived from my real photograph using ASCII characters." />
 </picture>
 
 I'm **Willam Huamán**, with a background in **Computer Science** and a clear direction: **AI Engineering**. I want to connect data, software and artificial intelligence to build useful applications—and make technical knowledge easier to understand through **Willam | Data & AI**.

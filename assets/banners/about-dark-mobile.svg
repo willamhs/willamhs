@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="440" height="710" viewBox="0 0 440 710" role="img" aria-labelledby="visual-title visual-desc">
 <title id="visual-title">Meet Willam Huaman</title><desc id="visual-desc">Computer Science background, based in Peru. Focused on learning AI Engineering and sharing data and AI knowledge. The portrait is actual ASCII derived from Willam&#x27;s supplied photograph.</desc>
-<rect x="1" y="1" width="438" height="708" rx="20" fill="#000000" stroke="#1E293B"/>
+<defs><linearGradient id="about-blue"><stop stop-color="#0B1B35"/><stop offset="1" stop-color="#123C7D"/></linearGradient></defs><rect x="1" y="1" width="438" height="708" rx="20" fill="url(#about-blue)" stroke="#244776"/>
 <g font-family="Arial,Helvetica,sans-serif"><text x="27" y="44" font-size="12" letter-spacing="2.2" fill="#3B82F6" font-weight="700">THE PERSON BEHIND THE DATA</text>
 <text x="27" y="96" font-size="32" font-weight="700" fill="#F8FAFC">Curious by nature.</text><text x="27" y="135" font-size="32" font-weight="700" fill="#F8FAFC">Building with purpose.</text>
-<text x="28" y="182" font-size="16" fill="#B5C0D0">Computer Science background.</text>
-<text x="28" y="209" font-size="16" fill="#B5C0D0">Based in Peru. Growing toward AI Engineering.</text>
-<text x="28" y="236" font-size="16" fill="#B5C0D0">Learning, creating and sharing along the way.</text>
+<text x="28" y="182" font-size="16" fill="#A8BFDE">Computer Science background.</text>
+<text x="28" y="209" font-size="16" fill="#A8BFDE">Based in Peru. Growing toward AI Engineering.</text>
+<text x="28" y="236" font-size="16" fill="#A8BFDE">Learning, creating and sharing along the way.</text>
 </g>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1104.0 1192" role="img" aria-labelledby="portrait-title portrait-desc" x="78" y="265" width="284" height="354">
 <title id="portrait-title">Willam Huaman - photographic ASCII portrait</title>
@@ -8920,4 +8920,4 @@
 <text x="1073.4" y="1166" fill="#AAB3C2">,</text>
 </g></svg>
 
-<text x="220" y="674" font-family="Arial,Helvetica,sans-serif" font-size="11" letter-spacing="2" fill="#B5C0D0" text-anchor="middle">REAL PHOTO. REAL ASCII. MY IDENTITY.</text></svg>
+<text x="220" y="674" font-family="Arial,Helvetica,sans-serif" font-size="11" letter-spacing="2" fill="#A8BFDE" text-anchor="middle">REAL PHOTO. REAL ASCII. MY IDENTITY.</text></svg>
