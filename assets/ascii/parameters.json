@@ -1,0 +1,14 @@
+{
+  "source": "perfil.jpg (user supplied; not committed)",
+  "crop": [
+    285,
+    130,
+    825,
+    715
+  ],
+  "selected_columns": 160,
+  "cell_width": 6.6,
+  "line_height": 11,
+  "background": "OpenCV GrabCut; no generative reconstruction",
+  "ramp": " .`^\",:;Il!i~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"
+}

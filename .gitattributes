@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.svg text eol=lf
+*.png binary
+# Preserve the rectangular ASCII grid and unmodified upstream source whitespace.
+assets/ascii/*.txt whitespace=-blank-at-eol,-blank-at-eof
+assets/icons/** whitespace=-blank-at-eol,-blank-at-eof
