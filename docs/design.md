@@ -10,7 +10,7 @@ GitHub strips custom page CSS and scripts from READMEs. The profile therefore us
 
 The header, About Me composition, footer, portrait and activity chart have light and dark variants. Separate mobile compositions keep their text readable without squeezing desktop artwork. Area cards are native HTML tables with equal-width columns, selectable headings, descriptions, project counters and repository links. Only the decorative black-to-blue headers and original-color brand icons are static SVGs. Native GitHub styling adapts the text to the theme. A README cannot use custom CSS to turn a two-column table into a single-column grid on phones; long unbroken tokens may require native horizontal scrolling.
 
-The portrait uses solid black, heavier monospace glyphs on a white field, including in dark mode; its navy frame fits the surrounding design. The portrait is larger in both About Me compositions so that facial detail survives downscaling. The roadmap uses neutral icon tiles to preserve original brand colors and retain contrast. All images have meaningful alt text or empty alt text when decorative. No external fonts or JavaScript are required.
+The About Me panel and the portrait both use a solid `#000000` background in every theme and layout. White headings, gray body copy and silver monospace glyphs retain contrast. The source foreground is composited on black before sampling glyphs, preserving the original order of facial highlights and shadows. The portrait is larger in both About Me compositions so that facial detail survives downscaling. The roadmap uses neutral icon tiles to preserve original brand colors and retain contrast. All images have meaningful alt text or empty alt text when decorative. No external fonts or JavaScript are required.
 
 ## Portrait processing
 
@@ -20,26 +20,26 @@ Reproduction:
 
 ```bash
 python -m pip install -r requirements.txt
-python scripts/generate_ascii.py /path/to/perfil.jpg --columns 160 --ink black
+python scripts/generate_ascii.py /path/to/perfil.jpg --columns 160 --ink silver
 ```
 
 The pipeline corrects EXIF orientation and uses an explicit crop `(285, 130, 825, 715)` around the original hair, face, neck and shoulders. OpenCV GrabCut attenuates the plain studio background. A modest bilateral filter, blended CLAHE local contrast and mild unsharp masking preserve the source expression without geometric face warping or synthetic reconstruction.
 
-The grayscale crop is downsampled using Lanczos at **80, 120 and 160 columns**. Row counts account for the cell's 6.6-to-11 width/height ratio. Printable ASCII glyphs are selected by calibrated bold-font ink density, with a mild midtone gain of 0.84. Displayed glyphs use weight 600 and solid black for greater visibility at README size. Every non-space glyph is positioned explicitly in SVG to prevent cumulative font fallback drift, and spaces remain present in the text export.
+The grayscale crop is downsampled using Lanczos at **80, 120 and 160 columns**. Row counts account for the cell's 6.6-to-11 width/height ratio. Printable ASCII glyphs are selected by calibrated bold-font ink density, with a mild midtone gain of 0.84. Silver ink uses foreground luminance on black, rather than a photographic negative. Displayed glyphs use weight 600. Every non-space glyph is positioned explicitly in SVG to prevent cumulative font fallback drift, and spaces remain present in the text export.
 
 The SVGs contain only uniform background rectangles, groups and visible ASCII text, plus accessibility metadata. They contain no source bitmap, embedded raster, face-shaped paths or external references. Each generated SVG glyph is checked against the selected text file in the tests.
 
 Outputs:
 
 - `assets/ascii/portrait.txt`: selected 160-column text.
-- `portrait-light.svg` and `portrait-dark.svg`: high-contrast black ASCII, with theme-aware frames.
+- `portrait-light.svg` and `portrait-dark.svg`: silver ASCII on a uniform black background.
 - `portrait-blue.svg`: optional blue-ink alternative.
 - `portrait-mono.svg`: black and white.
 - `portrait-{80,120,160}.txt` and `portrait-{80,120,160}-{light,dark,mono}.svg`: review alternatives.
 - `parameters.json`: crop, character scale, selected resolution and processing notes.
 - `preview/ascii-comparison.png`: local side-by-side comparison, excluded from Git.
 
-Visual comparison selected 160 columns because it better preserves the hair outline, eye spacing, teeth and smile than 80 columns. Recognition remains subjective: ASCII loses fine texture. Black ink, heavier glyphs and the enlarged 300-pixel desktop portrait improve perceived contrast. At README size, individual glyphs merge into tonal detail; opening the SVG reveals the characters. The supplied variants remain available for personal review. Font renderers may introduce small differences between Windows and Linux; fixed coordinates preserve the overall proportions.
+Visual comparison selected 160 columns because it better preserves the hair outline, eye spacing, teeth and smile than 80 columns. Recognition remains subjective: ASCII loses fine texture. Silver ink on black, heavier glyphs and the enlarged 300-pixel desktop portrait improve perceived contrast. At README size, individual glyphs merge into tonal detail; opening the SVG reveals the characters. The supplied variants remain available for personal review. Font renderers may introduce small differences between Windows and Linux; fixed coordinates preserve the overall proportions.
 
 ## Editorial credibility
 

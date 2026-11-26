@@ -27,11 +27,10 @@ def hero(theme="dark", mobile=False):
 
 
 def about_card(theme, mobile=False):
-    dark = theme == "dark"
     width, height = (440,710) if mobile else (1120,420)
-    bg,ink,muted = ("#0B1B35","#F8FAFC","#A8BFDE") if dark else ("#F0F6FF","#102B55","#48658B")
+    bg,ink,muted = "#000000","#F8FAFC","#B5C0D0"
     parts = svg_start(width,height,"Meet Willam Huaman", "Computer Science background, based in Peru. Focused on learning AI Engineering and sharing data and AI knowledge. The portrait is actual ASCII derived from Willam's supplied photograph.")
-    parts.append(f'<defs><linearGradient id="about-blue"><stop stop-color="{bg}"/><stop offset="1" stop-color="{"#123C7D" if dark else "#DFEBFF"}"/></linearGradient></defs><rect x="1" y="1" width="{width-2}" height="{height-2}" rx="20" fill="url(#about-blue)" stroke="{"#244776" if dark else "#CDDEF7"}"/>')
+    parts.append(f'<rect x="1" y="1" width="{width-2}" height="{height-2}" rx="20" fill="{bg}" stroke="#1E293B"/>')
     x,y = (27,44) if mobile else (44,55)
     parts.append(f'<g font-family="Arial,Helvetica,sans-serif"><text x="{x}" y="{y}" font-size="12" letter-spacing="2.2" fill="#3B82F6" font-weight="700">THE PERSON BEHIND THE DATA</text>')
     if mobile:

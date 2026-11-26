@@ -94,7 +94,7 @@ Design and optional link checks:
 ```bash
 python scripts/build_assets.py
 python scripts/validate_profile.py --check-links
-python scripts/generate_ascii.py /path/to/original/perfil.jpg --columns 160 --ink black
+python scripts/generate_ascii.py /path/to/original/perfil.jpg --columns 160 --ink silver
 ```
 
 `build_assets.py` verifies and vendors upstream icons, generates the per-area gradient headers and rebuilds the technology roadmap. It requires network access; the hourly refresh does not depend on icon or badge services. When adding a new configured area, rebuild its header before publishing. The original photograph stays outside the repository and is not needed by Actions.
