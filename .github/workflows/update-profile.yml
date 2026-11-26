@@ -1,10 +1,12 @@
-name: Profile checks and daily refresh
+name: Profile checks and hourly refresh
 
 on:
   schedule:
-    # 06:17 America/Lima (UTC-5), away from the top of the hour.
-    - cron: '17 11 * * *'
+    # Minute 17 of every hour, away from the top of the hour.
+    - cron: '17 * * * *'
   workflow_dispatch:
+  repository_dispatch:
+    types: [profile-refresh]
   pull_request:
   push:
     branches: [main]
@@ -44,7 +46,7 @@ jobs:
     needs: validate
     if: >-
       github.repository == 'willamhs/willamhs' &&
-      (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
+      (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'repository_dispatch')
     runs-on: ubuntu-24.04
     timeout-minutes: 8
     permissions:

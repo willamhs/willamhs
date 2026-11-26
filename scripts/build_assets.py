@@ -16,11 +16,13 @@ import xml.etree.ElementTree as ET
 import requests
 
 try:
-    from .common import ROOT, atomic_write, replace_section
+    from .common import ROOT, atomic_write, read_config, replace_section
     from .design_profile import build_identity
+    from .portfolio_areas import build_area_assets
 except ImportError:
-    from common import ROOT, atomic_write, replace_section
+    from common import ROOT, atomic_write, read_config, replace_section
     from design_profile import build_identity
+    from portfolio_areas import build_area_assets
 
 # Devicon 2.17.0, and older Simple Icons marks for brands removed upstream.
 DEV = "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons"
@@ -137,7 +139,8 @@ def main():
     atomic_write(ROOT / "assets/icons/sources.json", json.dumps(manifest, indent=2, sort_keys=True) + "\n")
     for key, path in AREA_PATHS.items():
         atomic_write(ROOT / f"assets/icons/areas/{key}.svg", f'<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">{path}</svg>\n')
-    build_identity(AREA_PATHS)
+    build_identity()
+    build_area_assets(read_config())
     atomic_write(ROOT / "assets/banners/divider.svg", '<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="12" viewBox="0 0 1100 12"><defs><linearGradient id="g"><stop stop-color="#2563EB"/><stop offset="1" stop-color="#60A5FA" stop-opacity="0.08"/></linearGradient></defs><rect y="5" width="1100" height="2" rx="1" fill="url(#g)"/></svg>\n')
     for icon, label, _ in SOCIALS:
         atomic_write(ROOT / f"assets/icons/social/{icon}.svg", button(icon,label))

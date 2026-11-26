@@ -76,7 +76,9 @@ def test_filtering(config):
     ([],"other"), (["unrecognized"],"other"), (["RAG"],"ai-engineering"),
     (["data-science","python"],"data-science"), (["etl","docker"],"data-engineering"),
     (["rag","portfolio-analytics"],"analytics"), (["rag","portfolio-other"],"other"),
-    (["terraform","mlops"],"cloud-mlops"), (["backend"],"software"),
+    (["terraform","mlops"],"mlops"), (["backend"],"software"),
+    (["power-bi"],"business-intelligence"), (["aws"],"cloud"),
+    (["portfolio-cloud-mlops"],"cloud"),
     (["machine-learning","deep-learning"],"machine-learning"),
 ])
 def test_classification(config,topics,expected):
@@ -90,11 +92,13 @@ def test_feature_priority_then_recency(config):
     assert [r["name"] for r in grouped_repositories(repos,config)["other"]] == ["featured","priority","new","old"]
 
 
-def test_empty_categories_hidden(config):
+def test_primary_areas_visible_and_empty_auxiliary_categories_hidden(config):
     groups = grouped_repositories([repo()],config)
     result = render_projects(groups,config)
     assert "Other Projects" in result
-    assert "Data Science" not in result
+    assert "Data Science" in result
+    assert "Software Engineering" not in result
+    assert "PRIMARY DIRECTION" not in result
     assert "<details>" not in result
 
 
@@ -187,3 +191,44 @@ def test_empty_snapshot_is_truthful(tmp_path):
     text = (root / "README.md").read_text(encoding="utf-8")
     assert "No eligible public repositories" in text
     assert "0 project stars" in text
+
+
+def test_new_project_enters_its_area_without_duplicates(tmp_path):
+    root = local_root(tmp_path)
+    refresh(root,client_with(response([repo("older",topics=["portfolio-analytics"])])))
+    new = repo("new-rag-project",topics=["rag","langchain"],updated_at="2026-11-26T00:00:00Z")
+    snapshot=refresh(root,client_with(response([repo("older",topics=["portfolio-analytics"]),new])))
+    assert snapshot["categories"]["ai-engineering"] == [new["full_name"]]
+    text=(root / "README.md").read_text(encoding="utf-8")
+    assert text.count(f'href="{new["html_url"]}"') == 1
+    ai_area=text.split('<h3>AI Engineering &amp; Generative AI</h3>')[1].split('</td>')[0]
+    assert new["html_url"] in ai_area
+    assert "LangChain" in ai_area
+
+
+def test_project_moves_when_topics_change(tmp_path):
+    root=local_root(tmp_path)
+    refresh(root,client_with(response([repo("moving",topics=[])])))
+    snapshot=refresh(root,client_with(response([repo("moving",topics=["portfolio-business-intelligence"])])))
+    assert snapshot["categories"] == {"business-intelligence":["willamhs/moving"]}
+    text=(root / "README.md").read_text(encoding="utf-8")
+    assert text.count('href="https://github.com/willamhs/moving"') == 1
+    assert '<h3>Other Projects</h3>' not in text
+
+
+def test_deleting_project_removes_it_on_next_refresh(tmp_path):
+    root=local_root(tmp_path)
+    refresh(root,client_with(response([repo("deleted",topics=["portfolio-cloud"])])))
+    snapshot=refresh(root,client_with(response([])))
+    assert snapshot["portfolio_repositories"] == []
+    assert 'href="https://github.com/willamhs/deleted"' not in (root / "README.md").read_text(encoding="utf-8")
+
+
+def test_native_html_has_no_css_or_javascript(config):
+    text=render_projects(grouped_repositories([repo()],config),config)
+    assert '<table width="100%">' in text
+    assert 'style=' not in text and '<script' not in text and 'class=' not in text
+    assert 'focus-light.svg' not in text
+    for c in config["categories"]:
+        if c.get("show_when_empty"):
+            assert f'<h3>{c["name"].replace("&","&amp;")}</h3>' in text

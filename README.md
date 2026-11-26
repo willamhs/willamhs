@@ -7,8 +7,7 @@
 
 <p align="center">
   <a href="#about-me">About me</a> &nbsp; / &nbsp;
-  <a href="#areas-of-focus">Areas of focus</a> &nbsp; / &nbsp;
-  <a href="#project-portfolio">Projects</a> &nbsp; / &nbsp;
+  <a href="#areas-and-projects">Areas &amp; projects</a> &nbsp; / &nbsp;
   <a href="#technology-roadmap">Technology</a> &nbsp; / &nbsp;
   <a href="#lets-connect">Connect</a>
 </p>
@@ -37,51 +36,101 @@ I'm **Willam Huamán**, with a background in **Computer Science** and a clear di
 
 <p align="center"><sub><a href="assets/ascii/portrait.txt">View the real ASCII portrait</a> &nbsp; · &nbsp; <a href="docs/design.md">The story behind the design</a></sub></p>
 
-## Areas of focus
+## Areas and projects
 
-**One direction. Connected disciplines.** My learning map spans the full journey from understanding data to developing and operating intelligent systems.
+Data, AI, cloud and software are connected disciplines. Each area below has the same place in my learning and project portfolio.
 
-<picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/areas/focus-dark-mobile.svg" />
-  <source media="(max-width: 600px)" srcset="assets/areas/focus-light-mobile.svg" />
-  <source media="(prefers-color-scheme: dark)" srcset="assets/areas/focus-dark.svg" />
-  <img src="assets/areas/focus-light.svg" width="100%" alt="Eight areas of focus: AI Engineering & Generative AI; Data Analytics; Business Intelligence; Data Science; Machine Learning & Deep Learning; Data Engineering; Cloud Computing; MLOps & LLMOps. AI Engineering is my primary direction. These cards describe my learning roadmap." />
-</picture>
-
-<details>
-<summary>Read the areas and their direction</summary>
-
-| Area | Learning direction |
-| :--- | :--- |
-| **AI Engineering & Generative AI** | LLMs, RAG, AI agents and useful intelligent applications |
-| **Data Analytics** | Python, SQL and exploratory analysis |
-| **Business Intelligence** | Dashboards, data storytelling and decision support |
-| **Data Science** | Statistics, experimentation and predictive analysis |
-| **Machine Learning & Deep Learning** | Predictive models, neural networks and evaluation |
-| **Data Engineering** | ETL / ELT, data pipelines and data platforms |
-| **Cloud Computing** | Google Cloud, AWS and Microsoft Azure |
-| **MLOps & LLMOps** | Evaluation, deployment and observability |
-
-</details>
-
-## Project portfolio
-
-Real repositories. Open source code. A portfolio that grows with the work.
-
-[Browse all repositories ↗](https://github.com/willamhs?tab=repositories) &nbsp; · &nbsp; [Topic classification](docs/automation.md#classify-a-project)
+[Explore all repositories](https://github.com/willamhs?tab=repositories) | [How new projects are classified](docs/automation.md#classify-a-project)
 
 <!-- PROJECTS:START -->
 
-Public, original, active repositories. Grouped by GitHub topics; each project appears once.
+<table width="100%">
 
-<h3><img src="assets/icons/areas/folder.svg" width="23" height="23" alt="" /> Other Projects <sub>· 11</sub></h3>
+<tr>
 
-<h4><a href="https://github.com/willamhs/flowers-amarillas">flowers-amarillas</a></h4>
+<td width="50%" valign="top">
+<img src="assets/areas/analytics-header.svg" width="100%" alt="Data Analytics: original-color technology icons on a black-to-blue gradient" />
+<h3>Data Analytics</h3>
+<p>Explore data and turn findings into useful insights.</p>
+<p><sub>No public projects published in this area yet.</sub></p>
+</td>
+
+<td width="50%" valign="top">
+<img src="assets/areas/business-intelligence-header.svg" width="100%" alt="Business Intelligence: original-color technology icons on a black-to-blue gradient" />
+<h3>Business Intelligence</h3>
+<p>Connect business questions with clear dashboards.</p>
+<p><sub>No public projects published in this area yet.</sub></p>
+</td>
+
+</tr>
+
+<tr>
+
+<td width="50%" valign="top">
+<img src="assets/areas/data-science-header.svg" width="100%" alt="Data Science: original-color technology icons on a black-to-blue gradient" />
+<h3>Data Science</h3>
+<p>Study patterns through statistics and experiments.</p>
+<p><sub>No public projects published in this area yet.</sub></p>
+</td>
+
+<td width="50%" valign="top">
+<img src="assets/areas/machine-learning-header.svg" width="100%" alt="Machine Learning &amp; Deep Learning: original-color technology icons on a black-to-blue gradient" />
+<h3>Machine Learning &amp; Deep Learning</h3>
+<p>Develop models and evaluate how they learn.</p>
+<p><sub>No public projects published in this area yet.</sub></p>
+</td>
+
+</tr>
+
+<tr>
+
+<td width="50%" valign="top">
+<img src="assets/areas/ai-engineering-header.svg" width="100%" alt="AI Engineering &amp; Generative AI: original-color technology icons on a black-to-blue gradient" />
+<h3>AI Engineering &amp; Generative AI</h3>
+<p>Explore LLMs, retrieval and intelligent agents.</p>
+<p><sub>No public projects published in this area yet.</sub></p>
+</td>
+
+<td width="50%" valign="top">
+<img src="assets/areas/data-engineering-header.svg" width="100%" alt="Data Engineering: original-color technology icons on a black-to-blue gradient" />
+<h3>Data Engineering</h3>
+<p>Build dependable pipelines and data foundations.</p>
+<p><sub>No public projects published in this area yet.</sub></p>
+</td>
+
+</tr>
+
+<tr>
+
+<td width="50%" valign="top">
+<img src="assets/areas/cloud-header.svg" width="100%" alt="Cloud Computing: original-color technology icons on a black-to-blue gradient" />
+<h3>Cloud Computing</h3>
+<p>Connect data and applications in the cloud.</p>
+<p><sub>No public projects published in this area yet.</sub></p>
+</td>
+
+<td width="50%" valign="top">
+<img src="assets/areas/mlops-header.svg" width="100%" alt="MLOps &amp; LLMOps: original-color technology icons on a black-to-blue gradient" />
+<h3>MLOps &amp; LLMOps</h3>
+<p>Evaluate, deploy and monitor intelligent systems.</p>
+<p><sub>No public projects published in this area yet.</sub></p>
+</td>
+
+</tr>
+
+</table>
+
+<table width="100%"><tr><td valign="top">
+<img src="assets/areas/other-header.svg" width="100%" alt="Other Projects: original-color technology icons on a black-to-blue gradient" />
+<h3>Other Projects</h3>
+<p>Public repositories waiting for a recognized specialty topic.</p>
+<p><strong>11 public projects</strong></p>
+<h4><a href="https://github.com/willamhs/flowers-amarillas">flowers-amar<wbr />illas</a></h4>
 <p><em>No repository description provided.</em></p>
 <p><img src="assets/icons/tech/javascript.svg" width="18" height="18" alt="" /> JavaScript &nbsp; · &nbsp; 0 stars &nbsp; · &nbsp; Updated 2026-09-21 &nbsp; · &nbsp; <a href="https://flowers-amarillas.vercel.app">Live demo ↗</a><br />
 <sub><strong>Technologies:</strong> JavaScript<br /><strong>Topics:</strong> Not set</sub></p>
 
-<h4><a href="https://github.com/willamhs/FLORES-AMARILLAS">FLORES-AMARILLAS</a></h4>
+<h4><a href="https://github.com/willamhs/FLORES-AMARILLAS">FLORES-AMARI<wbr />LLAS</a></h4>
 <p><em>No repository description provided.</em></p>
 <p><img src="assets/icons/tech/javascript.svg" width="18" height="18" alt="" /> JavaScript &nbsp; · &nbsp; 0 stars &nbsp; · &nbsp; Updated 2026-09-21 &nbsp; · &nbsp; <a href="https://flores-amarillas-amber.vercel.app">Live demo ↗</a><br />
 <sub><strong>Technologies:</strong> JavaScript<br /><strong>Topics:</strong> Not set</sub></p>
@@ -94,12 +143,10 @@ Public, original, active repositories. Grouped by GitHub topics; each project ap
 <h4><a href="https://github.com/willamhs/WillamDevCS">WillamDevCS</a></h4>
 <p>Config files for my GitHub profile.</p>
 <p>Language not reported &nbsp; · &nbsp; 0 stars &nbsp; · &nbsp; Updated 2026-01-16 &nbsp; · &nbsp; <a href="https://github.com/willamhs">Live demo ↗</a><br />
-<sub><strong>Technologies:</strong> Not identified in public metadata<br /><strong>Topics:</strong> <code>config</code> <code>github-config</code></sub></p>
+<sub><strong>Technologies:</strong> Not identified in public metadata<br /><strong>Topics:</strong> <code>config</code> <code>github-confi<wbr />g</code></sub></p>
 
-<details>
-<summary>Explore 7 more projects</summary>
-
-<h4><a href="https://github.com/willamhs/analisissentimientos">analisissentimientos</a></h4>
+<details><summary>Explore 7 more projects</summary>
+<h4><a href="https://github.com/willamhs/analisissentimientos">analisissent<wbr />imientos</a></h4>
 <p><em>No repository description provided.</em></p>
 <p>Language not reported &nbsp; · &nbsp; 0 stars &nbsp; · &nbsp; Updated 2025-12-05<br />
 <sub><strong>Technologies:</strong> Not identified in public metadata<br /><strong>Topics:</strong> Not set</sub></p>
@@ -109,35 +156,35 @@ Public, original, active repositories. Grouped by GitHub topics; each project ap
 <p><img src="assets/icons/tech/javascript.svg" width="18" height="18" alt="" /> JavaScript &nbsp; · &nbsp; 0 stars &nbsp; · &nbsp; Updated 2025-07-17<br />
 <sub><strong>Technologies:</strong> JavaScript<br /><strong>Topics:</strong> Not set</sub></p>
 
-<h4><a href="https://github.com/willamhs/crypto-recommender">crypto-recommender</a></h4>
+<h4><a href="https://github.com/willamhs/crypto-recommender">crypto-recom<wbr />mender</a></h4>
 <p><em>No repository description provided.</em></p>
 <p><img src="assets/icons/tech/typescript.svg" width="18" height="18" alt="" /> TypeScript &nbsp; · &nbsp; 0 stars &nbsp; · &nbsp; Updated 2025-07-10<br />
 <sub><strong>Technologies:</strong> TypeScript<br /><strong>Topics:</strong> Not set</sub></p>
 
-<h4><a href="https://github.com/willamhs/Holme-frontend">Holme-frontend</a></h4>
+<h4><a href="https://github.com/willamhs/Holme-frontend">Holme-fronte<wbr />nd</a></h4>
 <p><em>No repository description provided.</em></p>
 <p><img src="assets/icons/tech/typescript.svg" width="18" height="18" alt="" /> TypeScript &nbsp; · &nbsp; 0 stars &nbsp; · &nbsp; Updated 2024-11-21<br />
 <sub><strong>Technologies:</strong> TypeScript<br /><strong>Topics:</strong> Not set</sub></p>
 
-<h4><a href="https://github.com/willamhs/HoldMe-APIRESTFULL">HoldMe-APIRESTFULL</a></h4>
+<h4><a href="https://github.com/willamhs/HoldMe-APIRESTFULL">HoldMe-APIRE<wbr />STFULL</a></h4>
 <p><em>No repository description provided.</em></p>
 <p><img src="assets/icons/tech/java.svg" width="18" height="18" alt="" /> Java &nbsp; · &nbsp; 0 stars &nbsp; · &nbsp; Updated 2024-11-19<br />
 <sub><strong>Technologies:</strong> Java<br /><strong>Topics:</strong> Not set</sub></p>
 
-<h4><a href="https://github.com/willamhs/AnalsisSentimientos">AnalsisSentimientos</a></h4>
+<h4><a href="https://github.com/willamhs/AnalsisSentimientos">AnalsisSenti<wbr />mientos</a></h4>
 <p><em>No repository description provided.</em></p>
 <p>Language not reported &nbsp; · &nbsp; 0 stars &nbsp; · &nbsp; Updated 2024-11-18<br />
 <sub><strong>Technologies:</strong> Not identified in public metadata<br /><strong>Topics:</strong> Not set</sub></p>
 
-<h4><a href="https://github.com/willamhs/reservation_system_api">reservation_system_api</a></h4>
+<h4><a href="https://github.com/willamhs/reservation_system_api">reservation_<wbr />system_api</a></h4>
 <p><em>No repository description provided.</em></p>
 <p><img src="assets/icons/tech/java.svg" width="18" height="18" alt="" /> Java &nbsp; · &nbsp; 0 stars &nbsp; · &nbsp; Updated 2024-08-21<br />
 <sub><strong>Technologies:</strong> Java<br /><strong>Topics:</strong> Not set</sub></p>
 
 </details>
+</td></tr></table>
 
-
-<sub>Repository descriptions and topics are shown as published by their owner. Technologies come from the primary language and recognized topics; they do not represent a complete dependency audit.</sub>
+<p><sub>New public repositories are discovered by the hourly refresh. Topics choose the area; unrecognized topics go to Other Projects. <a href="docs/automation.md#classify-a-project">How classification works</a>. Forks, archived repositories and this profile are excluded. Technologies shown in project metadata come from their primary language and recognized topics.</sub></p>
 
 <!-- PROJECTS:END -->
 
