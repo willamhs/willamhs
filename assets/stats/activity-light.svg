@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="538" viewBox="0 0 800 538" role="img" aria-labelledby="title desc">
+<title id="title">Public GitHub portfolio activity</title>
+<desc id="desc">13 public repositories; 11 eligible original active projects; 0 stars across eligible projects. Language counts measure repositories, not lines of code. Category counts use topics.</desc>
+<rect width="800" height="538" rx="20" fill="#F8FAFC"/>
+<defs><linearGradient id="bar"><stop stop-color="#2563EB"/><stop offset="1" stop-color="#60A5FA"/></linearGradient></defs>
+<g font-family="Arial,Helvetica,sans-serif" fill="#0F172A">
+<rect x="28" y="24" width="232" height="112" rx="12" fill="#FFFFFF" stroke="#DCE5F2"/>
+<text x="46" y="78" font-size="40" font-weight="700">13</text>
+<text x="46" y="111" font-size="14" fill="#475569" letter-spacing="1">PUBLIC REPOSITORIES</text>
+<rect x="284" y="24" width="232" height="112" rx="12" fill="#FFFFFF" stroke="#DCE5F2"/>
+<text x="302" y="78" font-size="40" font-weight="700">11</text>
+<text x="302" y="111" font-size="14" fill="#475569" letter-spacing="1">PORTFOLIO PROJECTS</text>
+<rect x="540" y="24" width="232" height="112" rx="12" fill="#FFFFFF" stroke="#DCE5F2"/>
+<text x="558" y="78" font-size="40" font-weight="700">0</text>
+<text x="558" y="111" font-size="14" fill="#475569" letter-spacing="1">PROJECT STARS</text>
+<text x="28" y="178" font-size="16" fill="#475569" letter-spacing="2">PRIMARY LANGUAGES</text>
+<text x="28" y="210" font-size="18">Not reported</text>
+<rect x="300" y="193" width="410" height="20" rx="6" fill="#DCE5F2"/>
+<rect x="300" y="193" width="111.82" height="20" rx="6" fill="url(#bar)"/>
+<text x="767" y="210" text-anchor="end" font-size="18">3</text>
+<text x="28" y="258" font-size="18">JavaScript</text>
+<rect x="300" y="241" width="410" height="20" rx="6" fill="#DCE5F2"/>
+<rect x="300" y="241" width="111.82" height="20" rx="6" fill="url(#bar)"/>
+<text x="767" y="258" text-anchor="end" font-size="18">3</text>
+<text x="28" y="306" font-size="18">TypeScript</text>
+<rect x="300" y="289" width="410" height="20" rx="6" fill="#DCE5F2"/>
+<rect x="300" y="289" width="74.55" height="20" rx="6" fill="url(#bar)"/>
+<text x="767" y="306" text-anchor="end" font-size="18">2</text>
+<text x="28" y="354" font-size="18">Java</text>
+<rect x="300" y="337" width="410" height="20" rx="6" fill="#DCE5F2"/>
+<rect x="300" y="337" width="74.55" height="20" rx="6" fill="url(#bar)"/>
+<text x="767" y="354" text-anchor="end" font-size="18">2</text>
+<text x="28" y="402" font-size="18">HTML</text>
+<rect x="300" y="385" width="410" height="20" rx="6" fill="#DCE5F2"/>
+<rect x="300" y="385" width="37.27" height="20" rx="6" fill="url(#bar)"/>
+<text x="767" y="402" text-anchor="end" font-size="18">1</text>
+<text x="28" y="465" font-size="16" fill="#475569" letter-spacing="2">PROJECT SPECIALTIES</text>
+<text x="28" y="497" font-size="18">Other Projects</text>
+<rect x="300" y="480" width="410" height="20" rx="6" fill="#DCE5F2"/>
+<rect x="300" y="480" width="410.00" height="20" rx="6" fill="url(#bar)"/>
+<text x="767" y="497" text-anchor="end" font-size="18">11</text>
+<text x="28" y="520" font-size="13" fill="#475569">Source: GitHub REST API · Repository counts · No private activity inferred</text></g></svg>

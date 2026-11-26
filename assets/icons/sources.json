@@ -1,0 +1,380 @@
+{
+  "amazonwebservices": {
+    "color": null,
+    "sha256": "5b4d8371d79a5c0d3a27ea4e929f772e68d47f7d267496bf9211d5f60fcf8084",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+  },
+  "apacheairflow": {
+    "color": null,
+    "sha256": "0c83b226d54e77eda3336a4a7138a8ba61d82b5a8fee2bc026c135a239ec1814",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/apacheairflow/apacheairflow-original.svg"
+  },
+  "apachekafka": {
+    "color": null,
+    "sha256": "2505c5b688c18c8fd5dd8e888561eb7b23a56a75d291ff17e8ee18770193f3e8",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/apachekafka/apachekafka-original.svg"
+  },
+  "apachespark": {
+    "color": "E25A1C",
+    "sha256": "3d7bc046bb2d203cc667c1e2ff9460e082dafe2505c60885a60ac8cff5821bac",
+    "upstream": "Simple Icons",
+    "url": "https://cdn.jsdelivr.net/npm/simple-icons@11.15.0/icons/apachespark.svg"
+  },
+  "azure": {
+    "color": null,
+    "sha256": "7923db83e3f9755bd412241a683fa996fb7a9d0259b5084de449e6be92f7ca20",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/azure/azure-original.svg"
+  },
+  "bash": {
+    "color": null,
+    "sha256": "8e9b1f859331c8d11571e77b1371c5d7ac7e380abfcd2f31160ed81dc37de403",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/bash/bash-original.svg"
+  },
+  "bigquery": {
+    "color": "669DF6",
+    "sha256": "9911daac258359ac5e73916bc8e97f6df03d5f5845b210bdb99c629f8caf0f84",
+    "upstream": "Simple Icons",
+    "url": "https://cdn.jsdelivr.net/npm/simple-icons@11.15.0/icons/googlebigquery.svg"
+  },
+  "catboost": {
+    "color": null,
+    "sha256": "2677a4748ab67984bb22e7aee53fee5634ec26fe0e2c6da838e8d52e1b13adfd",
+    "upstream": "catboost",
+    "url": "https://catboost-opensource.s3.yandex.net/logo_white_for_dark_theme.svg"
+  },
+  "cplusplus": {
+    "color": null,
+    "sha256": "7ff8253551235e3a6b002a7c2bd6e3190d85113a64fcb40f2254473caeb025d4",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/cplusplus/cplusplus-original.svg"
+  },
+  "csharp": {
+    "color": null,
+    "sha256": "7093478d0888e22a224b6fa832da6c9ffd14c433de8bd14aab0c1cb50925f3ee",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/csharp/csharp-original.svg"
+  },
+  "css3": {
+    "color": null,
+    "sha256": "36b7d94b657d571d3f94042acbf6a4c86a5301a222f83f4b4583ad2acf6e297d",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/css3/css3-original.svg"
+  },
+  "databricks": {
+    "color": "FF3621",
+    "sha256": "454aa3efdb318c655e3da2ea844e3577a9c47a20e24d20fff6489362176e5fe4",
+    "upstream": "Simple Icons",
+    "url": "https://cdn.jsdelivr.net/npm/simple-icons@11.15.0/icons/databricks.svg"
+  },
+  "dbt": {
+    "color": "FF694B",
+    "sha256": "e8ced6f94379a74d3d6622516f2f067c247b22f8f5470557ca8e6751d426df38",
+    "upstream": "Simple Icons",
+    "url": "https://cdn.jsdelivr.net/npm/simple-icons@11.15.0/icons/dbt.svg"
+  },
+  "docker": {
+    "color": null,
+    "sha256": "3fd830ea69431ed7a0b8d068cd5b34ad3f00a1a78195d50f13ff56713f2462e1",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/docker/docker-original.svg"
+  },
+  "excel": {
+    "color": "217346",
+    "sha256": "3392b76e2c1791f6622bc6a27bcf332ea6985cf263f8cb7153a37d43d74d2940",
+    "upstream": "Simple Icons",
+    "url": "https://cdn.jsdelivr.net/npm/simple-icons@11.15.0/icons/microsoftexcel.svg"
+  },
+  "fastapi": {
+    "color": null,
+    "sha256": "7ef41f6a363b00ff595e6d0b933c025c92cbfae29dc1df24b2f6eb8b476ee486",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/fastapi/fastapi-original.svg"
+  },
+  "gemini": {
+    "color": "8E75B2",
+    "sha256": "a6228d8846040401e941a39ed17459785e8324dbb7b870ce84233c9b3e9863a0",
+    "upstream": "Simple Icons",
+    "url": "https://cdn.jsdelivr.net/npm/simple-icons@15.0.0/icons/googlegemini.svg"
+  },
+  "git": {
+    "color": null,
+    "sha256": "717a57ea97bf7e86de721dab3e68afac66332a10676d5c9abce4ae6a5a9c9983",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/git/git-original.svg"
+  },
+  "github": {
+    "color": null,
+    "sha256": "45262793de6292206a895ed63593cdb1eaed82074173f7f4b5bdb3e427ca805a",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/github/github-original.svg"
+  },
+  "githubactions": {
+    "color": null,
+    "sha256": "3a2524052ccf301d1a239f20cfef98d655e060c51cc29c5e94c867913899a47e",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/githubactions/githubactions-original.svg"
+  },
+  "go": {
+    "color": null,
+    "sha256": "2d4558b96d3ec71d0d922a62668cb2ea5a5d83ed7d4caf6b0479b3266f795a2f",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/go/go-original.svg"
+  },
+  "googlecloud": {
+    "color": null,
+    "sha256": "1615b3e53228faa14378f1abb2b78e5f6c3f0ec562bc37db3efde885714e6c2f",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/googlecloud/googlecloud-original.svg"
+  },
+  "html5": {
+    "color": null,
+    "sha256": "34826e5b3315daadf4fa15f723a3c1d5ba4a89277bfd94e22ac4d7d3d54338c5",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/html5/html5-original.svg"
+  },
+  "huggingface": {
+    "color": "FFD21E",
+    "sha256": "aa81744034eecf4ac6b3fb7108dd71223965c7af3c534932391314563b150109",
+    "upstream": "Simple Icons",
+    "url": "https://cdn.jsdelivr.net/npm/simple-icons@15.0.0/icons/huggingface.svg"
+  },
+  "instagram": {
+    "color": "E4405F",
+    "sha256": "f53af2d1fc5292ba1433b5c1faf50005ce6a997fa302d1816989929f379a59dc",
+    "upstream": "Simple Icons",
+    "url": "https://cdn.jsdelivr.net/npm/simple-icons@11.15.0/icons/instagram.svg"
+  },
+  "java": {
+    "color": null,
+    "sha256": "7582e518a9c02425f97155e5a3bd39d1a3a7d421b78caf9c8df7443dad3edc5d",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/java/java-original.svg"
+  },
+  "javascript": {
+    "color": null,
+    "sha256": "0656ff65fc8eeacda5c78d7f9ffe91ec1eb919db64f56e0b7dcd460af4bbd36c",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/javascript/javascript-original.svg"
+  },
+  "jupyter": {
+    "color": null,
+    "sha256": "9b246fe756a3b600f68a7af1f17702033a1cdb6417da3a9f695337f584b5d545",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/jupyter/jupyter-original.svg"
+  },
+  "keras": {
+    "color": null,
+    "sha256": "ed3a03bc9566c9cb38aed58ab404ad706de31a941a17c32dc71ea70fb32c2945",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/keras/keras-original.svg"
+  },
+  "kubernetes": {
+    "color": null,
+    "sha256": "fb31e4163238978201cfde0601728ee5168b74e476c32c37739bed626fa281ae",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/kubernetes/kubernetes-original.svg"
+  },
+  "langchain": {
+    "color": "1C3C3C",
+    "sha256": "6d8347547ea7e96b9d183d28a0a4068d329250724aecd260674d09339a6b5fcf",
+    "upstream": "Simple Icons",
+    "url": "https://cdn.jsdelivr.net/npm/simple-icons@15.0.0/icons/langchain.svg"
+  },
+  "langgraph": {
+    "color": "1C3C3C",
+    "sha256": "23327d183f1aecc70de8ef0e6f65f07d09199875c550c31d44a9c283500ec7b4",
+    "upstream": "Simple Icons",
+    "url": "https://cdn.jsdelivr.net/npm/simple-icons@15.0.0/icons/langgraph.svg"
+  },
+  "lightgbm": {
+    "color": null,
+    "sha256": "135928a5fbdc85effff9518d4ec8ae3c1b74eeb63c940ff8cd860c6cee091a3b",
+    "upstream": "lightgbm",
+    "url": "https://raw.githubusercontent.com/microsoft/LightGBM/v4.6.0/docs/logo/LightGBM_logo_no_text.svg"
+  },
+  "linkedin": {
+    "color": "0A66C2",
+    "sha256": "2687ac468d96bd03e748dc8646ef6465cb4cc7f34b96e1d0bc86fcb3dd79121a",
+    "upstream": "Simple Icons",
+    "url": "https://cdn.jsdelivr.net/npm/simple-icons@11.15.0/icons/linkedin.svg"
+  },
+  "linktree": {
+    "color": "43E55E",
+    "sha256": "8a2d665b26a0c2d51c958b0a7232737de2aa518a8c7b725127da3c30d2482c96",
+    "upstream": "Simple Icons",
+    "url": "https://cdn.jsdelivr.net/npm/simple-icons@11.15.0/icons/linktree.svg"
+  },
+  "lookerstudio": {
+    "color": "4285F4",
+    "sha256": "a31264d446cb6b7bd628b3c26676be070f65abdc5a659a4ae699fb658c8fd7e0",
+    "upstream": "Simple Icons",
+    "url": "https://cdn.jsdelivr.net/npm/simple-icons@11.15.0/icons/looker.svg"
+  },
+  "matplotlib": {
+    "color": null,
+    "sha256": "c93696650c82f3c87b0c7228b501187feab0c10326249ffa1ea8b4c196e57f1b",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/matplotlib/matplotlib-original.svg"
+  },
+  "microsoftsqlserver": {
+    "color": null,
+    "sha256": "f52b63cb5ff8c17efc079ae93eb7e2f1a04ca34eb736310c3576b19c0b9db21d",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/microsoftsqlserver/microsoftsqlserver-original.svg"
+  },
+  "mlflow": {
+    "color": "0194E2",
+    "sha256": "686679a10a6bdf1029ec4103bec15d8aec365a2be39f6b840992c597e2c76d45",
+    "upstream": "Simple Icons",
+    "url": "https://cdn.jsdelivr.net/npm/simple-icons@11.15.0/icons/mlflow.svg"
+  },
+  "mongodb": {
+    "color": null,
+    "sha256": "d9f2bf7041264f4747e9969fb82ede0199c0ac97dfa8632aa0687d702ec05f7b",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/mongodb/mongodb-original.svg"
+  },
+  "mysql": {
+    "color": null,
+    "sha256": "f73fa5d6b9da33fbf540ff96f5360c24b6d29d883ecfe6fcaecf89a8d3456067",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/mysql/mysql-original.svg"
+  },
+  "numpy": {
+    "color": null,
+    "sha256": "efd53b9bf8637500d43ece39fe7ac43c972066f7166e408c5fd13e7cb73d7a05",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/numpy/numpy-original.svg"
+  },
+  "ollama": {
+    "color": "737373",
+    "sha256": "9c62bf0159ee96c8b58c86a732f33b002b4b3bb165ec86e8ecca51ad6a82dab6",
+    "upstream": "Simple Icons",
+    "url": "https://cdn.jsdelivr.net/npm/simple-icons@15.0.0/icons/ollama.svg"
+  },
+  "openai": {
+    "color": "10A37F",
+    "sha256": "2b4a04ddc2395b20d168694d3850ce2050a702c4a0cdeb4d8b31b9a970481a8c",
+    "upstream": "Simple Icons",
+    "url": "https://cdn.jsdelivr.net/npm/simple-icons@11.15.0/icons/openai.svg"
+  },
+  "pandas": {
+    "color": null,
+    "sha256": "0051003a5e5f8739c3304386456843a51be4717dab49c4fea6732ecc6e891b3d",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/pandas/pandas-original.svg"
+  },
+  "plotly": {
+    "color": null,
+    "sha256": "ce447cdbb2c5b978c1622d1700776b28c78550bfb44e471d88b613adee5c573d",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/plotly/plotly-original.svg"
+  },
+  "postgresql": {
+    "color": null,
+    "sha256": "f220a436258ed014c512ba4f9c0de6b9e5c2c4b55331a0a29f8c7a1a12c36443",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/postgresql/postgresql-original.svg"
+  },
+  "powerbi": {
+    "color": "F2C811",
+    "sha256": "d013902e022208ea00acc45c0ed4377699a2913ce1b26267e85e85001603d554",
+    "upstream": "Simple Icons",
+    "url": "https://cdn.jsdelivr.net/npm/simple-icons@11.15.0/icons/powerbi.svg"
+  },
+  "python": {
+    "color": null,
+    "sha256": "71493b4a732f0532b3a03a7a95da3ee11a65766367c8303b901ffbe7bf91a3a2",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/python/python-original.svg"
+  },
+  "pytorch": {
+    "color": null,
+    "sha256": "7fb9c244f59aa3261ed17d6166ef50d0f07e6e5bc4e5211ca53b6e4837e09e75",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/pytorch/pytorch-original.svg"
+  },
+  "r": {
+    "color": null,
+    "sha256": "9d135e1a56f58f89203afc9253f1db91901e19522f92dfc10575e3312336e61b",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/r/r-original.svg"
+  },
+  "redis": {
+    "color": null,
+    "sha256": "4707378b190878f36f7e6e1c01fa3ee7e7884c76101809d191dddd943a2e6bdb",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/redis/redis-original.svg"
+  },
+  "rust": {
+    "color": null,
+    "sha256": "16c6c6a98e990944fc5e1cc64cc8fc7b8be3a662ec4ee7951b7995d2e52f5e12",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/rust/rust-original.svg"
+  },
+  "scikitlearn": {
+    "color": null,
+    "sha256": "d60362a1c43c5571876ebaab923f7783f6f7d3bd64bd78cca765a451dc5e92e2",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/scikitlearn/scikitlearn-original.svg"
+  },
+  "seaborn": {
+    "color": null,
+    "sha256": "0603ba57662386e28346517ec949f759c7ebb3861f287a2db435f2f7c4726c78",
+    "upstream": "seaborn",
+    "url": "https://raw.githubusercontent.com/mwaskom/seaborn/v0.13.2/doc/_static/logo-mark-lightbg.svg"
+  },
+  "tableau": {
+    "color": "E97627",
+    "sha256": "0be88c65662b32fbf6cb5504cf8c2356ab57dcb81d0a9b7632e776b947dd6029",
+    "upstream": "Simple Icons",
+    "url": "https://cdn.jsdelivr.net/npm/simple-icons@11.15.0/icons/tableau.svg"
+  },
+  "tensorflow": {
+    "color": null,
+    "sha256": "44f2bb3db305bc30f50ec0578f7a4a840c82c3544d36e436ab7d8afee3937b71",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/tensorflow/tensorflow-original.svg"
+  },
+  "terraform": {
+    "color": null,
+    "sha256": "0be6427291ae47f057b75f9010dffd6f58a40f0c83c43606ff68851cef1621dc",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/terraform/terraform-original.svg"
+  },
+  "tiktok": {
+    "color": "000000",
+    "sha256": "6f54ac8d325faacea8935bdc44cbed60206a6b408641799e5fea1cba7c1a0af7",
+    "upstream": "Simple Icons",
+    "url": "https://cdn.jsdelivr.net/npm/simple-icons@11.15.0/icons/tiktok.svg"
+  },
+  "typescript": {
+    "color": null,
+    "sha256": "c9191199f4049920c2fc19035b8a6664f37f4689fcd9e8434e786097e78863f0",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/typescript/typescript-original.svg"
+  },
+  "vertexai": {
+    "color": null,
+    "sha256": "1615b3e53228faa14378f1abb2b78e5f6c3f0ec562bc37db3efde885714e6c2f",
+    "upstream": "Devicon",
+    "url": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/googlecloud/googlecloud-original.svg"
+  },
+  "xgboost": {
+    "color": null,
+    "sha256": "55452a1d9ae81ecc849d1aafd0b9fd0b2c639c91251d4188ec84ea69c9bf9c9b",
+    "upstream": "xgboost",
+    "url": "https://xgboost.ai/images/logo/xgboost-logo.svg"
+  },
+  "youtube": {
+    "color": "FF0000",
+    "sha256": "5038808acbbc4e6edda16cbeb1cc6dec80e4e4ee4e227e039c41229fa222aa8c",
+    "upstream": "Simple Icons",
+    "url": "https://cdn.jsdelivr.net/npm/simple-icons@11.15.0/icons/youtube.svg"
+  }
+}

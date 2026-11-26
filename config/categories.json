@@ -1,0 +1,25 @@
+{
+  "username": "willamhs",
+  "profile_repository": "willamhs/willamhs",
+  "featured": [],
+  "priority": {},
+  "exclude": [],
+  "visible_per_category": 4,
+  "categories": [
+    {"id": "analytics", "name": "Data Analytics & Business Intelligence", "icon": "analytics", "topics": ["data-analytics", "data-analysis", "business-intelligence", "power-bi", "powerbi", "tableau", "dashboard", "excel", "looker-studio"]},
+    {"id": "data-science", "name": "Data Science", "icon": "science", "topics": ["data-science", "statistics", "statistical-analysis", "exploratory-data-analysis", "eda"]},
+    {"id": "machine-learning", "name": "Machine Learning & Deep Learning", "icon": "neural", "topics": ["machine-learning", "deep-learning", "tensorflow", "pytorch", "scikit-learn", "computer-vision", "nlp", "xgboost", "lightgbm", "catboost"]},
+    {"id": "ai-engineering", "name": "AI Engineering & Generative AI", "icon": "ai", "topics": ["ai-engineering", "generative-ai", "genai", "llm", "llms", "rag", "ai-agents", "langchain", "langgraph", "openai", "ollama", "hugging-face", "huggingface"]},
+    {"id": "data-engineering", "name": "Data Engineering", "icon": "pipeline", "topics": ["data-engineering", "etl", "elt", "apache-spark", "apache-kafka", "apache-airflow", "databricks", "dbt", "data-warehouse", "data-warehousing"]},
+    {"id": "cloud-mlops", "name": "Cloud Computing & MLOps", "icon": "cloud", "topics": ["cloud-computing", "gcp", "google-cloud", "aws", "azure", "mlops", "llmops", "docker", "kubernetes", "terraform", "mlflow", "vertex-ai"]},
+    {"id": "software", "name": "Software Engineering", "icon": "code", "topics": ["software-engineering", "web-development", "rest-api", "backend", "frontend", "full-stack", "fastapi", "spring-boot", "react", "angular"]},
+    {"id": "other", "name": "Other Projects", "icon": "folder", "topics": []}
+  ],
+  "topic_technologies": {
+    "python": "Python", "sql": "SQL", "r": "R", "pandas": "Pandas", "numpy": "NumPy", "jupyter": "Jupyter", "matplotlib": "Matplotlib", "seaborn": "Seaborn", "plotly": "Plotly",
+    "power-bi": "Power BI", "powerbi": "Power BI", "tableau": "Tableau", "excel": "Excel", "looker-studio": "Looker Studio", "postgresql": "PostgreSQL", "mysql": "MySQL", "sql-server": "SQL Server", "mongodb": "MongoDB", "redis": "Redis",
+    "scikit-learn": "Scikit-learn", "tensorflow": "TensorFlow", "pytorch": "PyTorch", "keras": "Keras", "xgboost": "XGBoost", "lightgbm": "LightGBM", "catboost": "CatBoost", "openai": "OpenAI", "gemini": "Gemini", "huggingface": "Hugging Face", "hugging-face": "Hugging Face", "langchain": "LangChain", "langgraph": "LangGraph", "ollama": "Ollama", "fastapi": "FastAPI",
+    "apache-spark": "Apache Spark", "apache-kafka": "Apache Kafka", "apache-airflow": "Apache Airflow", "databricks": "Databricks", "dbt": "dbt", "gcp": "GCP", "google-cloud": "GCP", "bigquery": "BigQuery", "vertex-ai": "Vertex AI", "aws": "AWS", "azure": "Azure", "docker": "Docker", "kubernetes": "Kubernetes", "mlflow": "MLflow", "terraform": "Terraform", "github-actions": "GitHub Actions", "react": "React", "angular": "Angular", "spring-boot": "Spring Boot"
+  },
+  "language_icons": {"Python": "python", "JavaScript": "javascript", "TypeScript": "typescript", "Java": "java", "HTML": "html5", "CSS": "css3", "R": "r", "Jupyter Notebook": "jupyter", "Shell": "bash", "C++": "cplusplus", "C#": "csharp", "Go": "go", "Rust": "rust"}
+}
