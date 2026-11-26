@@ -51,7 +51,7 @@ def ascii_rows(gray: np.ndarray, columns: int, cell_ratio: float = 0.60) -> list
     rows = round(gray.shape[0] / gray.shape[1] * columns * cell_ratio)
     reduced = np.array(Image.fromarray(gray).resize((columns, rows), Image.Resampling.LANCZOS)).astype(float)
     # Darkness maps monotonically to glyph density; background stays spaces.
-    darkness = np.clip((255-reduced) / 255, 0, 1) ** 0.90
+    darkness = np.clip((255-reduced) / 255, 0, 1) ** 0.84
     # Calibrate actual ink coverage instead of assuming the glyph order is linear.
     coverage = np.array([glyph_coverage()[c] for c in RAMP])
     indexes = np.abs(darkness[:,:,None]-coverage[None,None,:]).argmin(axis=2)
@@ -60,7 +60,7 @@ def ascii_rows(gray: np.ndarray, columns: int, cell_ratio: float = 0.60) -> list
 
 @lru_cache(maxsize=1)
 def glyph_coverage() -> dict[str, float]:
-    font = ImageFont.truetype(font_path(), 40)
+    font = ImageFont.truetype(font_path(bold=True), 40)
     coverage = []
     chars = ''.join(chr(i) for i in range(32,127))
     for char in chars:
@@ -72,20 +72,22 @@ def glyph_coverage() -> dict[str, float]:
     return dict(zip(chars, coverage))
 
 
-def portrait_svg(rows: list[str], theme: str = "dark") -> str:
+def portrait_svg(rows: list[str], theme: str = "dark", ink: str = "black") -> str:
     columns, cell, line, pad = len(rows[0]), 6.6, 11, 24
     width, height = columns*cell+2*pad, len(rows)*line+2*pad
-    bg = "#0A1425" if theme == "dark" else "#F8FAFC"
-    # A narrow ink palette preserves luminance contrast instead of washing out skin.
-    colors = ["#1D4ED8", "#1D4ED8", "#1E40AF", "#172554"]
+    bg = "#020B1B" if theme == "dark" else "#FFFFFF"
+    # Solid black with a heavier face preserves visible ink after README scaling.
+    colors = ["#080A0E", "#080A0E", "#050609", "#000000"]
+    if ink == "blue":
+        colors = ["#1D4ED8", "#1D4ED8", "#1E40AF", "#172554"]
     if theme == "mono":
-        bg, colors = "#FFFFFF", ["#111111"]*4
+        bg, colors = "#FFFFFF", ["#000000"]*4
     chunks = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width:.1f}" height="{height}" viewBox="0 0 {width:.1f} {height}" role="img" aria-labelledby="title desc">',
         '<title id="title">Willam Huaman - photographic ASCII portrait</title>',
         '<desc id="desc">Printable ASCII sampled from the original portrait: natural hair, eyes, smile, neck and shoulders. Every glyph represents source-image luminance.</desc>',
         f'<rect width="100%" height="100%" rx="24" fill="{bg}"/>',
-        *([f'<rect x="12" y="12" width="{width-24:.1f}" height="{height-24}" rx="16" fill="#E7F0FF"/>'] if theme == "dark" else []),
-        '<g font-family="Consolas,DejaVu Sans Mono,Liberation Mono,monospace" font-size="11" xml:space="preserve">']
+        *([f'<rect x="12" y="12" width="{width-24:.1f}" height="{height-24}" rx="16" fill="#FFFFFF"/>'] if theme == "dark" else []),
+        '<g font-family="Consolas,DejaVu Sans Mono,Liberation Mono,monospace" font-size="11" font-weight="600" xml:space="preserve">']
     for y, row in enumerate(rows):
         # Each character gets an explicit position: font fallback cannot accumulate drift.
         for x, char in enumerate(row):
@@ -97,15 +99,16 @@ def portrait_svg(rows: list[str], theme: str = "dark") -> str:
     return "\n".join(chunks) + "\n</g></svg>\n"
 
 
-def font_path():
-    for path in ["C:/Windows/Fonts/consola.ttf", "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"]:
+def font_path(bold=False):
+    candidates = ["C:/Windows/Fonts/consolab.ttf", "/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf"] if bold else ["C:/Windows/Fonts/consola.ttf", "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"]
+    for path in candidates:
         if Path(path).exists():
             return path
     raise FileNotFoundError("A monospace font is required for the comparison sheet")
 
 
 def render_ascii(rows: list[str], width: int = 540) -> Image.Image:
-    font = ImageFont.truetype(font_path(), 14)
+    font = ImageFont.truetype(font_path(bold=True), 14)
     cell, line = font.getlength("M"), 14
     result = Image.new("RGB", (round(len(rows[0])*cell+32), len(rows)*line+32), "white")
     draw = ImageDraw.Draw(result)
@@ -119,6 +122,7 @@ def main():
     parser.add_argument("source", type=Path, help="The original, unmodified photograph")
     parser.add_argument("--output", type=Path, default=ROOT / "assets/ascii")
     parser.add_argument("--columns", type=int, default=160, choices=[80,120,160])
+    parser.add_argument("--ink", choices=["black","blue"], default="black")
     parser.add_argument("--crop", type=int, nargs=4, default=DEFAULT_CROP, metavar=("LEFT","TOP","RIGHT","BOTTOM"))
     args = parser.parse_args()
     original = ImageOps.exif_transpose(Image.open(args.source)).convert("RGB")
@@ -130,11 +134,12 @@ def main():
         variants[columns] = rows
         atomic_write(args.output / f"portrait-{columns}.txt", "\n".join(rows) + "\n")
         for theme in ("light", "dark", "mono"):
-            atomic_write(args.output / f"portrait-{columns}-{theme}.svg", portrait_svg(rows, theme))
+            atomic_write(args.output / f"portrait-{columns}-{theme}.svg", portrait_svg(rows, theme,args.ink))
     selected = variants[args.columns]
     atomic_write(args.output / "portrait.txt", "\n".join(selected) + "\n")
     for theme in ("light", "dark", "mono"):
-        atomic_write(args.output / f"portrait-{theme}.svg", portrait_svg(selected, theme))
+        atomic_write(args.output / f"portrait-{theme}.svg", portrait_svg(selected, theme,args.ink))
+    atomic_write(args.output / "portrait-blue.svg",portrait_svg(selected,"light","blue"))
     # Comparison is a review artifact, never embedded into the profile SVG.
     photos = [original.crop(args.crop).resize((540,585))] + [render_ascii(variants[c]) for c in variants]
     sheet = Image.new("RGB", (4*564, 690), "#E2E8F0")
@@ -145,7 +150,7 @@ def main():
     review = ROOT / "preview"
     review.mkdir(exist_ok=True)
     sheet.save(review / "ascii-comparison.png")
-    atomic_write(args.output / "parameters.json", json.dumps({"source": "perfil.jpg (user supplied; not committed)", "crop": list(args.crop), "selected_columns": args.columns, "cell_width": 6.6, "line_height": 11, "background": "OpenCV GrabCut; no generative reconstruction", "ramp": RAMP}, indent=2) + "\n")
+    atomic_write(args.output / "parameters.json", json.dumps({"source": "perfil.jpg (user supplied; not committed)", "crop": list(args.crop), "selected_columns": args.columns, "ink": args.ink, "font_weight": 600, "midtone_gamma": 0.84, "cell_width": 6.6, "line_height": 11, "background": "OpenCV GrabCut; no generative reconstruction", "ramp": RAMP}, indent=2) + "\n")
     print(f"Generated 80, 120, 160 column variants; selected {args.columns}. Comparison: {review / 'ascii-comparison.png'}")
 
 
