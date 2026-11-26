@@ -10,5 +10,8 @@
   "cell_width": 6.6,
   "line_height": 11,
   "background": "OpenCV GrabCut; no generative reconstruction",
-  "ramp": " .`^\",:;Il!i~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"
+  "ramp": " .`^\",:;Il!i~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$",
+  "ink": "black",
+  "font_weight": 600,
+  "midtone_gamma": 0.84
 }

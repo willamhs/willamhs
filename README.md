@@ -1,8 +1,8 @@
 <picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/banners/header-dark-mobile.svg" />
-  <source media="(max-width: 600px)" srcset="assets/banners/header-light-mobile.svg" />
-  <source media="(prefers-color-scheme: dark)" srcset="assets/banners/header-dark.svg" />
-  <img src="assets/banners/header-light.svg" width="100%" alt="Willam | Data & AI. From curiosity to intelligent systems. Computer Science · Peru." />
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/banners/header-dark-mobile.svg?v=3" />
+  <source media="(max-width: 600px)" srcset="assets/banners/header-light-mobile.svg?v=3" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banners/header-dark.svg?v=3" />
+  <img src="assets/banners/header-light.svg?v=3" width="100%" alt="Willam | Data & AI. From curiosity to intelligent systems. Black background, electric-blue waves and a luminous cyan AI chip." />
 </picture>
 
 <p align="center">
@@ -27,10 +27,10 @@
 ## About me
 
 <picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/banners/about-dark-mobile.svg" />
-  <source media="(max-width: 600px)" srcset="assets/banners/about-light-mobile.svg" />
-  <source media="(prefers-color-scheme: dark)" srcset="assets/banners/about-dark.svg" />
-  <img src="assets/banners/about-light.svg" width="100%" alt="Willam Huamán. Curious by nature. Building with purpose. Computer Science background, based in Peru, growing toward AI Engineering. Portrait derived from my real photograph using ASCII characters." />
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/banners/about-dark-mobile.svg?v=3" />
+  <source media="(max-width: 600px)" srcset="assets/banners/about-light-mobile.svg?v=3" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banners/about-dark.svg?v=3" />
+  <img src="assets/banners/about-light.svg?v=3" width="100%" alt="Willam Huamán. Curious by nature. Building with purpose. Computer Science background, based in Peru, growing toward AI Engineering. Portrait derived from my real photograph using ASCII characters." />
 </picture>
 
 I'm **Willam Huamán**, with a background in **Computer Science** and a clear direction: **AI Engineering**. I want to connect data, software and artificial intelligence to build useful applications—and make technical knowledge easier to understand through **Willam | Data & AI**.
