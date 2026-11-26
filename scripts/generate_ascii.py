@@ -24,7 +24,7 @@ RAMP = ' .`^\",:;Il!i~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$'
 DEFAULT_CROP = (285, 130, 825, 715)
 
 
-def prepare_photo(image: Image.Image, crop=DEFAULT_CROP) -> np.ndarray:
+def prepare_photo(image: Image.Image, crop=DEFAULT_CROP, return_mask=False):
     image = ImageOps.exif_transpose(image).convert("RGB")
     if not (0 <= crop[0] < crop[2] <= image.width and 0 <= crop[1] < crop[3] <= image.height):
         raise ValueError("Crop must lie inside the original photograph")
@@ -44,14 +44,17 @@ def prepare_photo(image: Image.Image, crop=DEFAULT_CROP) -> np.ndarray:
     gray = cv2.addWeighted(gray, 1.45, blurred, -0.45, 0)
     gray = gray.astype(np.float32) * foreground + 255 * (1-foreground)
     left, top, right, bottom = crop
-    return gray[top:bottom, left:right].astype(np.uint8)
+    cropped = gray[top:bottom, left:right].astype(np.uint8)
+    if return_mask:
+        return cropped, foreground[top:bottom, left:right]
+    return cropped
 
 
-def ascii_rows(gray: np.ndarray, columns: int, cell_ratio: float = 0.60) -> list[str]:
+def ascii_rows(gray: np.ndarray, columns: int, cell_ratio: float = 0.60, light_on_dark: bool = False) -> list[str]:
     rows = round(gray.shape[0] / gray.shape[1] * columns * cell_ratio)
     reduced = np.array(Image.fromarray(gray).resize((columns, rows), Image.Resampling.LANCZOS)).astype(float)
-    # Darkness maps monotonically to glyph density; background stays spaces.
-    darkness = np.clip((255-reduced) / 255, 0, 1) ** 0.84
+    # Foreground tone maps monotonically to glyph density; background stays spaces.
+    darkness = np.clip((reduced if light_on_dark else 255-reduced) / 255, 0, 1) ** 0.84
     # Calibrate actual ink coverage instead of assuming the glyph order is linear.
     coverage = np.array([glyph_coverage()[c] for c in RAMP])
     indexes = np.abs(darkness[:,:,None]-coverage[None,None,:]).argmin(axis=2)
@@ -72,21 +75,23 @@ def glyph_coverage() -> dict[str, float]:
     return dict(zip(chars, coverage))
 
 
-def portrait_svg(rows: list[str], theme: str = "dark", ink: str = "black") -> str:
+def portrait_svg(rows: list[str], theme: str = "dark", ink: str = "silver") -> str:
     columns, cell, line, pad = len(rows[0]), 6.6, 11, 24
     width, height = columns*cell+2*pad, len(rows)*line+2*pad
     bg = "#020B1B" if theme == "dark" else "#FFFFFF"
-    # Solid black with a heavier face preserves visible ink after README scaling.
+    # Monochrome palettes retain visible ink after README scaling.
     colors = ["#080A0E", "#080A0E", "#050609", "#000000"]
+    if ink == "silver":
+        bg, colors = "#000000", ["#AAB3C2", "#CDD5E1", "#E5EAF2", "#FAFCFF"]
     if ink == "blue":
-        colors = ["#1D4ED8", "#1D4ED8", "#1E40AF", "#172554"]
+        bg, colors = "#000000", ["#60A5FA", "#93C5FD", "#BFDBFE", "#DBEAFE"]
     if theme == "mono":
-        bg, colors = "#FFFFFF", ["#000000"]*4
+        bg, colors = ("#000000", ["#FFFFFF"]*4) if ink in ("silver","blue") else ("#FFFFFF", ["#000000"]*4)
     chunks = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width:.1f}" height="{height}" viewBox="0 0 {width:.1f} {height}" role="img" aria-labelledby="title desc">',
         '<title id="title">Willam Huaman - photographic ASCII portrait</title>',
         '<desc id="desc">Printable ASCII sampled from the original portrait: natural hair, eyes, smile, neck and shoulders. Every glyph represents source-image luminance.</desc>',
         f'<rect width="100%" height="100%" rx="24" fill="{bg}"/>',
-        *([f'<rect x="12" y="12" width="{width-24:.1f}" height="{height-24}" rx="16" fill="#FFFFFF"/>'] if theme == "dark" else []),
+        *([f'<rect x="12" y="12" width="{width-24:.1f}" height="{height-24}" rx="16" fill="#FFFFFF"/>'] if theme == "dark" and ink == "black" else []),
         '<g font-family="Consolas,DejaVu Sans Mono,Liberation Mono,monospace" font-size="11" font-weight="600" xml:space="preserve">']
     for y, row in enumerate(rows):
         # Each character gets an explicit position: font fallback cannot accumulate drift.
@@ -107,13 +112,13 @@ def font_path(bold=False):
     raise FileNotFoundError("A monospace font is required for the comparison sheet")
 
 
-def render_ascii(rows: list[str], width: int = 540) -> Image.Image:
+def render_ascii(rows: list[str], width: int = 540, light_on_dark: bool = False) -> Image.Image:
     font = ImageFont.truetype(font_path(bold=True), 14)
     cell, line = font.getlength("M"), 14
-    result = Image.new("RGB", (round(len(rows[0])*cell+32), len(rows)*line+32), "white")
+    result = Image.new("RGB", (round(len(rows[0])*cell+32), len(rows)*line+32), "black" if light_on_dark else "white")
     draw = ImageDraw.Draw(result)
     for y, row in enumerate(rows):
-        draw.text((16, 12+y*line), row, font=font, fill="#111111")
+        draw.text((16, 12+y*line), row, font=font, fill="#E2E8F0" if light_on_dark else "#111111")
     return result.resize((width, round(result.height*width/result.width)), Image.Resampling.LANCZOS)
 
 
@@ -122,15 +127,20 @@ def main():
     parser.add_argument("source", type=Path, help="The original, unmodified photograph")
     parser.add_argument("--output", type=Path, default=ROOT / "assets/ascii")
     parser.add_argument("--columns", type=int, default=160, choices=[80,120,160])
-    parser.add_argument("--ink", choices=["black","blue"], default="black")
+    parser.add_argument("--ink", choices=["silver","black","blue"], default="silver")
     parser.add_argument("--crop", type=int, nargs=4, default=DEFAULT_CROP, metavar=("LEFT","TOP","RIGHT","BOTTOM"))
     args = parser.parse_args()
     original = ImageOps.exif_transpose(Image.open(args.source)).convert("RGB")
-    gray = prepare_photo(original, args.crop)
+    gray, foreground = prepare_photo(original, args.crop,return_mask=True)
+    light_on_dark = args.ink in ("silver","blue")
+    if light_on_dark:
+        # Composite the exact same foreground on black before glyph sampling.
+        # This keeps dark hair and bright teeth in their original tonal order.
+        gray = np.clip(gray.astype(float)-255*(1-foreground),0,255).astype(np.uint8)
     args.output.mkdir(parents=True, exist_ok=True)
     variants = {}
     for columns in (80,120,160):
-        rows = ascii_rows(gray, columns)
+        rows = ascii_rows(gray, columns,light_on_dark=light_on_dark)
         variants[columns] = rows
         atomic_write(args.output / f"portrait-{columns}.txt", "\n".join(rows) + "\n")
         for theme in ("light", "dark", "mono"):
@@ -141,7 +151,7 @@ def main():
         atomic_write(args.output / f"portrait-{theme}.svg", portrait_svg(selected, theme,args.ink))
     atomic_write(args.output / "portrait-blue.svg",portrait_svg(selected,"light","blue"))
     # Comparison is a review artifact, never embedded into the profile SVG.
-    photos = [original.crop(args.crop).resize((540,585))] + [render_ascii(variants[c]) for c in variants]
+    photos = [original.crop(args.crop).resize((540,585))] + [render_ascii(variants[c],light_on_dark=light_on_dark) for c in variants]
     sheet = Image.new("RGB", (4*564, 690), "#E2E8F0")
     draw = ImageDraw.Draw(sheet)
     for i, (label, picture) in enumerate(zip(["Original crop", "80 columns", "120 columns", "160 columns"], photos)):
@@ -150,7 +160,7 @@ def main():
     review = ROOT / "preview"
     review.mkdir(exist_ok=True)
     sheet.save(review / "ascii-comparison.png")
-    atomic_write(args.output / "parameters.json", json.dumps({"source": "perfil.jpg (user supplied; not committed)", "crop": list(args.crop), "selected_columns": args.columns, "ink": args.ink, "font_weight": 600, "midtone_gamma": 0.84, "cell_width": 6.6, "line_height": 11, "background": "OpenCV GrabCut; no generative reconstruction", "ramp": RAMP}, indent=2) + "\n")
+    atomic_write(args.output / "parameters.json", json.dumps({"source": "perfil.jpg (user supplied; not committed)", "crop": list(args.crop), "selected_columns": args.columns, "ink": args.ink, "light_on_dark": light_on_dark, "display_background": "#000000" if light_on_dark else "#FFFFFF", "font_weight": 600, "midtone_gamma": 0.84, "cell_width": 6.6, "line_height": 11, "background": "OpenCV GrabCut; no generative reconstruction", "ramp": RAMP}, indent=2) + "\n")
     print(f"Generated 80, 120, 160 column variants; selected {args.columns}. Comparison: {review / 'ascii-comparison.png'}")
 
 
