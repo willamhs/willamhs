@@ -6,20 +6,293 @@
   "exclude": [],
   "visible_per_category": 4,
   "categories": [
-    {"id": "analytics", "name": "Data Analytics & Business Intelligence", "icon": "analytics", "topics": ["data-analytics", "data-analysis", "business-intelligence", "power-bi", "powerbi", "tableau", "dashboard", "excel", "looker-studio"]},
-    {"id": "data-science", "name": "Data Science", "icon": "science", "topics": ["data-science", "statistics", "statistical-analysis", "exploratory-data-analysis", "eda"]},
-    {"id": "machine-learning", "name": "Machine Learning & Deep Learning", "icon": "neural", "topics": ["machine-learning", "deep-learning", "tensorflow", "pytorch", "scikit-learn", "computer-vision", "nlp", "xgboost", "lightgbm", "catboost"]},
-    {"id": "ai-engineering", "name": "AI Engineering & Generative AI", "icon": "ai", "topics": ["ai-engineering", "generative-ai", "genai", "llm", "llms", "rag", "ai-agents", "langchain", "langgraph", "openai", "ollama", "hugging-face", "huggingface"]},
-    {"id": "data-engineering", "name": "Data Engineering", "icon": "pipeline", "topics": ["data-engineering", "etl", "elt", "apache-spark", "apache-kafka", "apache-airflow", "databricks", "dbt", "data-warehouse", "data-warehousing"]},
-    {"id": "cloud-mlops", "name": "Cloud Computing & MLOps", "icon": "cloud", "topics": ["cloud-computing", "gcp", "google-cloud", "aws", "azure", "mlops", "llmops", "docker", "kubernetes", "terraform", "mlflow", "vertex-ai"]},
-    {"id": "software", "name": "Software Engineering", "icon": "code", "topics": ["software-engineering", "web-development", "rest-api", "backend", "frontend", "full-stack", "fastapi", "spring-boot", "react", "angular"]},
-    {"id": "other", "name": "Other Projects", "icon": "folder", "topics": []}
+    {
+      "id": "analytics",
+      "name": "Data Analytics",
+      "icon": "analytics",
+      "show_when_empty": true,
+      "description": "Explore data and turn findings into useful insights.",
+      "technologies": [
+        "python",
+        "pandas",
+        "numpy"
+      ],
+      "topics": [
+        "data-analytics",
+        "data-analysis",
+        "exploratory-data-analysis",
+        "eda",
+        "analytics"
+      ]
+    },
+    {
+      "id": "business-intelligence",
+      "name": "Business Intelligence",
+      "icon": "dashboard",
+      "show_when_empty": true,
+      "description": "Connect business questions with clear dashboards.",
+      "technologies": [
+        "powerbi",
+        "tableau",
+        "excel"
+      ],
+      "topics": [
+        "business-intelligence",
+        "power-bi",
+        "powerbi",
+        "tableau",
+        "dashboard",
+        "dashboards",
+        "excel",
+        "looker-studio"
+      ]
+    },
+    {
+      "id": "data-science",
+      "name": "Data Science",
+      "icon": "science",
+      "show_when_empty": true,
+      "description": "Study patterns through statistics and experiments.",
+      "technologies": [
+        "jupyter",
+        "r",
+        "plotly"
+      ],
+      "topics": [
+        "data-science",
+        "statistics",
+        "statistical-analysis",
+        "experimentation",
+        "predictive-analytics"
+      ]
+    },
+    {
+      "id": "machine-learning",
+      "name": "Machine Learning & Deep Learning",
+      "icon": "neural",
+      "show_when_empty": true,
+      "description": "Develop models and evaluate how they learn.",
+      "technologies": [
+        "scikitlearn",
+        "pytorch",
+        "tensorflow"
+      ],
+      "topics": [
+        "machine-learning",
+        "deep-learning",
+        "tensorflow",
+        "pytorch",
+        "scikit-learn",
+        "computer-vision",
+        "nlp",
+        "xgboost",
+        "lightgbm",
+        "catboost"
+      ]
+    },
+    {
+      "id": "ai-engineering",
+      "name": "AI Engineering & Generative AI",
+      "icon": "ai",
+      "show_when_empty": true,
+      "description": "Explore LLMs, retrieval and intelligent agents.",
+      "technologies": [
+        "openai",
+        "gemini",
+        "huggingface"
+      ],
+      "topics": [
+        "ai-engineering",
+        "generative-ai",
+        "genai",
+        "llm",
+        "llms",
+        "rag",
+        "ai-agents",
+        "langchain",
+        "langgraph",
+        "openai",
+        "ollama",
+        "hugging-face",
+        "huggingface"
+      ]
+    },
+    {
+      "id": "data-engineering",
+      "name": "Data Engineering",
+      "icon": "pipeline",
+      "show_when_empty": true,
+      "description": "Build dependable pipelines and data foundations.",
+      "technologies": [
+        "apachespark",
+        "apachekafka",
+        "apacheairflow"
+      ],
+      "topics": [
+        "data-engineering",
+        "etl",
+        "elt",
+        "apache-spark",
+        "apache-kafka",
+        "apache-airflow",
+        "databricks",
+        "dbt",
+        "data-warehouse",
+        "data-warehousing"
+      ]
+    },
+    {
+      "id": "cloud",
+      "name": "Cloud Computing",
+      "icon": "cloud",
+      "show_when_empty": true,
+      "description": "Connect data and applications in the cloud.",
+      "technologies": [
+        "googlecloud",
+        "amazonwebservices",
+        "azure"
+      ],
+      "topics": [
+        "cloud-computing",
+        "gcp",
+        "google-cloud",
+        "aws",
+        "azure",
+        "bigquery",
+        "vertex-ai",
+        "cloud-native"
+      ]
+    },
+    {
+      "id": "mlops",
+      "name": "MLOps & LLMOps",
+      "icon": "code",
+      "show_when_empty": true,
+      "description": "Evaluate, deploy and monitor intelligent systems.",
+      "technologies": [
+        "docker",
+        "mlflow",
+        "githubactions"
+      ],
+      "topics": [
+        "mlops",
+        "llmops",
+        "docker",
+        "kubernetes",
+        "terraform",
+        "mlflow",
+        "model-monitoring",
+        "model-deployment",
+        "github-actions"
+      ]
+    },
+    {
+      "id": "software",
+      "name": "Software Engineering",
+      "icon": "code",
+      "show_when_empty": false,
+      "description": "Build reliable APIs, applications and developer tools.",
+      "technologies": [
+        "git",
+        "java",
+        "fastapi"
+      ],
+      "topics": [
+        "software-engineering",
+        "web-development",
+        "rest-api",
+        "backend",
+        "frontend",
+        "full-stack",
+        "fastapi",
+        "spring-boot",
+        "react",
+        "angular"
+      ]
+    },
+    {
+      "id": "other",
+      "name": "Other Projects",
+      "icon": "folder",
+      "show_when_empty": false,
+      "description": "Public repositories waiting for a recognized specialty topic.",
+      "technologies": [
+        "github"
+      ],
+      "topics": []
+    }
   ],
   "topic_technologies": {
-    "python": "Python", "sql": "SQL", "r": "R", "pandas": "Pandas", "numpy": "NumPy", "jupyter": "Jupyter", "matplotlib": "Matplotlib", "seaborn": "Seaborn", "plotly": "Plotly",
-    "power-bi": "Power BI", "powerbi": "Power BI", "tableau": "Tableau", "excel": "Excel", "looker-studio": "Looker Studio", "postgresql": "PostgreSQL", "mysql": "MySQL", "sql-server": "SQL Server", "mongodb": "MongoDB", "redis": "Redis",
-    "scikit-learn": "Scikit-learn", "tensorflow": "TensorFlow", "pytorch": "PyTorch", "keras": "Keras", "xgboost": "XGBoost", "lightgbm": "LightGBM", "catboost": "CatBoost", "openai": "OpenAI", "gemini": "Gemini", "huggingface": "Hugging Face", "hugging-face": "Hugging Face", "langchain": "LangChain", "langgraph": "LangGraph", "ollama": "Ollama", "fastapi": "FastAPI",
-    "apache-spark": "Apache Spark", "apache-kafka": "Apache Kafka", "apache-airflow": "Apache Airflow", "databricks": "Databricks", "dbt": "dbt", "gcp": "GCP", "google-cloud": "GCP", "bigquery": "BigQuery", "vertex-ai": "Vertex AI", "aws": "AWS", "azure": "Azure", "docker": "Docker", "kubernetes": "Kubernetes", "mlflow": "MLflow", "terraform": "Terraform", "github-actions": "GitHub Actions", "react": "React", "angular": "Angular", "spring-boot": "Spring Boot"
+    "python": "Python",
+    "sql": "SQL",
+    "r": "R",
+    "pandas": "Pandas",
+    "numpy": "NumPy",
+    "jupyter": "Jupyter",
+    "matplotlib": "Matplotlib",
+    "seaborn": "Seaborn",
+    "plotly": "Plotly",
+    "power-bi": "Power BI",
+    "powerbi": "Power BI",
+    "tableau": "Tableau",
+    "excel": "Excel",
+    "looker-studio": "Looker Studio",
+    "postgresql": "PostgreSQL",
+    "mysql": "MySQL",
+    "sql-server": "SQL Server",
+    "mongodb": "MongoDB",
+    "redis": "Redis",
+    "scikit-learn": "Scikit-learn",
+    "tensorflow": "TensorFlow",
+    "pytorch": "PyTorch",
+    "keras": "Keras",
+    "xgboost": "XGBoost",
+    "lightgbm": "LightGBM",
+    "catboost": "CatBoost",
+    "openai": "OpenAI",
+    "gemini": "Gemini",
+    "huggingface": "Hugging Face",
+    "hugging-face": "Hugging Face",
+    "langchain": "LangChain",
+    "langgraph": "LangGraph",
+    "ollama": "Ollama",
+    "fastapi": "FastAPI",
+    "apache-spark": "Apache Spark",
+    "apache-kafka": "Apache Kafka",
+    "apache-airflow": "Apache Airflow",
+    "databricks": "Databricks",
+    "dbt": "dbt",
+    "gcp": "GCP",
+    "google-cloud": "GCP",
+    "bigquery": "BigQuery",
+    "vertex-ai": "Vertex AI",
+    "aws": "AWS",
+    "azure": "Azure",
+    "docker": "Docker",
+    "kubernetes": "Kubernetes",
+    "mlflow": "MLflow",
+    "terraform": "Terraform",
+    "github-actions": "GitHub Actions",
+    "react": "React",
+    "angular": "Angular",
+    "spring-boot": "Spring Boot"
   },
-  "language_icons": {"Python": "python", "JavaScript": "javascript", "TypeScript": "typescript", "Java": "java", "HTML": "html5", "CSS": "css3", "R": "r", "Jupyter Notebook": "jupyter", "Shell": "bash", "C++": "cplusplus", "C#": "csharp", "Go": "go", "Rust": "rust"}
+  "language_icons": {
+    "Python": "python",
+    "JavaScript": "javascript",
+    "TypeScript": "typescript",
+    "Java": "java",
+    "HTML": "html5",
+    "CSS": "css3",
+    "R": "r",
+    "Jupyter Notebook": "jupyter",
+    "Shell": "bash",
+    "C++": "cplusplus",
+    "C#": "csharp",
+    "Go": "go",
+    "Rust": "rust"
+  },
+  "primary_topic_aliases": {
+    "cloud-mlops": "cloud"
+  }
 }

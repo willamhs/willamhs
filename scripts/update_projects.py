@@ -20,9 +20,11 @@ import requests
 try:
     from .common import ROOT, atomic_write, read_config, replace_section, safe_url
     from .generate_stats import build_stats
+    from .portfolio_areas import render_areas
 except ImportError:
     from common import ROOT, atomic_write, read_config, replace_section, safe_url
     from generate_stats import build_stats
+    from portfolio_areas import render_areas
 
 API = "https://api.github.com"
 LOG = logging.getLogger(__name__)
@@ -133,6 +135,9 @@ def classify(repo: dict, config: dict) -> str:
     for category in config["categories"]:
         if f"portfolio-{category['id']}" in topics:
             return category["id"]
+    for alias, category in config.get("primary_topic_aliases", {}).items():
+        if f"portfolio-{alias}" in topics:
+            return category
     matches = [(len(topics & set(c["topics"])), -i, c["id"]) for i, c in enumerate(config["categories"]) if c["id"] != "other"]
     best = max(matches, default=(0, 0, "other"))
     return best[2] if best[0] else "other"
@@ -155,7 +160,8 @@ def grouped_repositories(repos: list[dict], config: dict) -> dict[str, list[dict
 
 
 def project_block(repo: dict, config: dict) -> str:
-    name, url = escape(repo["name"]), escape(repo["html_url"], quote=True)
+    name = escape(repo["name"])
+    url = escape(repo["html_url"], quote=True)
     featured = repo["full_name"].lower() in {x.lower() for x in config.get("featured", [])}
     label = " &nbsp; <sub>FEATURED</sub>" if featured else ""
     language = repo["language"]
@@ -175,22 +181,7 @@ def project_block(repo: dict, config: dict) -> str:
 
 
 def render_projects(groups: dict, config: dict) -> str:
-    chunks = ["Public, original, active repositories. Grouped by GitHub topics; each project appears once.\n"]
-    for category in config["categories"]:
-        repos = groups[category["id"]]
-        if not repos:
-            continue
-        chunks.append(f'<h3><img src="assets/icons/areas/{category["icon"]}.svg" width="23" height="23" alt="" /> {escape(category["name"])} <sub>· {len(repos)}</sub></h3>\n')
-        limit = config["visible_per_category"]
-        chunks.extend(project_block(r, config) for r in repos[:limit])
-        if len(repos) > limit:
-            chunks.append(f'<details>\n<summary>Explore {len(repos) - limit} more projects</summary>\n')
-            chunks.extend(project_block(r, config) for r in repos[limit:])
-            chunks.append("</details>\n")
-    if not any(groups.values()):
-        chunks.append("No eligible public repositories are currently available.\n")
-    chunks.append("\n<sub>Repository descriptions and topics are shown as published by their owner. Technologies come from the primary language and recognized topics; they do not represent a complete dependency audit.</sub>")
-    return "\n".join(chunks)
+    return render_areas(groups,config,project_block)
 
 
 def refresh(root: Path = ROOT, client=None) -> dict:
@@ -204,7 +195,7 @@ def refresh(root: Path = ROOT, client=None) -> dict:
     eligible = eligible_repositories(public, config)
     groups = grouped_repositories(eligible, config)
     snapshot = {
-        "schema_version": 1, "username": config["username"],
+        "schema_version": 2, "username": config["username"],
         "source": f"{API}/users/{config['username']}/repos",
         "public_repositories": len(public),
         # Excluded repositories only contribute to the public count. In particular,
