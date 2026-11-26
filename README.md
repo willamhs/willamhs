@@ -1,8 +1,17 @@
 <picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/banners/header-dark-mobile.svg" />
+  <source media="(max-width: 600px)" srcset="assets/banners/header-light-mobile.svg" />
   <source media="(prefers-color-scheme: dark)" srcset="assets/banners/header-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="assets/banners/header-light.svg" />
-  <img src="assets/banners/header-light.svg" width="100%" alt="Willam | Data & AI — From data to intelligent systems. Computer Science · Peru." />
+  <img src="assets/banners/header-light.svg" width="100%" alt="Willam | Data & AI. From curiosity to intelligent systems. Computer Science · Peru." />
 </picture>
+
+<p align="center">
+  <a href="#about-me">About me</a> &nbsp; / &nbsp;
+  <a href="#areas-of-focus">Areas of focus</a> &nbsp; / &nbsp;
+  <a href="#project-portfolio">Projects</a> &nbsp; / &nbsp;
+  <a href="#technology-roadmap">Technology</a> &nbsp; / &nbsp;
+  <a href="#lets-connect">Connect</a>
+</p>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/willam-huaman-saavedra/"><img src="assets/icons/social/linkedin.svg" width="140" height="44" alt="LinkedIn" /></a>
@@ -15,30 +24,51 @@
   <a href="https://linktr.ee/willam.ai"><img src="assets/icons/social/linktree.svg" width="140" height="44" alt="Linktree" /></a>
 </p>
 
-## 01 / About me
+## About me
 
-I'm **Willam Huamán**, based in Peru, with an academic background in **Computer Science**. My goal is to specialize in **AI Engineering**: building useful intelligent applications on a foundation of sound data, software engineering and evaluation.
+<picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/banners/about-dark-mobile.svg" />
+  <source media="(max-width: 600px)" srcset="assets/banners/about-light-mobile.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banners/about-dark.svg" />
+  <img src="assets/banners/about-light.svg" width="100%" alt="Willam Huamán. Curious by nature. Building with purpose. Computer Science background, based in Peru, growing toward AI Engineering. Portrait derived from my real photograph using ASCII characters." />
+</picture>
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/ascii/portrait-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="assets/ascii/portrait-light.svg" />
-    <img src="assets/ascii/portrait-light.svg" width="280" alt="Willam's real photographic portrait rendered entirely with ASCII characters, preserving his hair and smile." />
-  </picture><br />
-  <sub>One photograph. Thousands of characters. <a href="assets/ascii/portrait.txt">Real ASCII</a>, generated with Python.</sub>
-</p>
+I'm **Willam Huamán**, with a background in **Computer Science** and a clear direction: **AI Engineering**. I want to connect data, software and artificial intelligence to build useful applications—and make technical knowledge easier to understand through **Willam | Data & AI**.
 
-My interests span analytics and business intelligence, data science, machine learning, deep learning, data engineering and cloud computing. My learning direction centers on **LLMs, retrieval-augmented generation, AI agents, MLOps and LLMOps**.
+<p align="center"><sub><a href="assets/ascii/portrait.txt">View the real ASCII portrait</a> &nbsp; · &nbsp; <a href="docs/design.md">The story behind the design</a></sub></p>
 
-I also want to make technical learning accessible through **Willam | Data & AI**, sharing what I learn about data and artificial intelligence. I welcome conversations about early-career opportunities, practical projects and technology education.
+## Areas of focus
 
-<p><img src="assets/icons/areas/analytics.svg" width="22" height="22" alt="" /> Understand the data &nbsp; → &nbsp; <img src="assets/icons/areas/ai.svg" width="22" height="22" alt="" /> Build intelligent systems &nbsp; → &nbsp; <img src="assets/icons/areas/cloud.svg" width="22" height="22" alt="" /> Learn to ship reliably</p>
+**One direction. Connected disciplines.** My learning map spans the full journey from understanding data to developing and operating intelligent systems.
 
-<img src="assets/banners/divider.svg" width="100%" height="12" alt="" />
+<picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/areas/focus-dark-mobile.svg" />
+  <source media="(max-width: 600px)" srcset="assets/areas/focus-light-mobile.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/areas/focus-dark.svg" />
+  <img src="assets/areas/focus-light.svg" width="100%" alt="Eight areas of focus: AI Engineering & Generative AI; Data Analytics; Business Intelligence; Data Science; Machine Learning & Deep Learning; Data Engineering; Cloud Computing; MLOps & LLMOps. AI Engineering is my primary direction. These cards describe my learning roadmap." />
+</picture>
 
-## 02 / Project portfolio
+<details>
+<summary>Read the areas and their direction</summary>
 
-[Explore all repositories](https://github.com/willamhs?tab=repositories) · [How projects are classified](docs/automation.md#classify-a-project)
+| Area | Learning direction |
+| :--- | :--- |
+| **AI Engineering & Generative AI** | LLMs, RAG, AI agents and useful intelligent applications |
+| **Data Analytics** | Python, SQL and exploratory analysis |
+| **Business Intelligence** | Dashboards, data storytelling and decision support |
+| **Data Science** | Statistics, experimentation and predictive analysis |
+| **Machine Learning & Deep Learning** | Predictive models, neural networks and evaluation |
+| **Data Engineering** | ETL / ELT, data pipelines and data platforms |
+| **Cloud Computing** | Google Cloud, AWS and Microsoft Azure |
+| **MLOps & LLMOps** | Evaluation, deployment and observability |
+
+</details>
+
+## Project portfolio
+
+Real repositories. Open source code. A portfolio that grows with the work.
+
+[Browse all repositories ↗](https://github.com/willamhs?tab=repositories) &nbsp; · &nbsp; [Topic classification](docs/automation.md#classify-a-project)
 
 <!-- PROJECTS:START -->
 
@@ -111,9 +141,7 @@ Public, original, active repositories. Grouped by GitHub topics; each project ap
 
 <!-- PROJECTS:END -->
 
-<img src="assets/banners/divider.svg" width="100%" height="12" alt="" />
-
-## 03 / Public activity
+## GitHub activity
 
 <!-- STATS:START -->
 
@@ -148,22 +176,22 @@ Languages count the primary language of each eligible repository, rather than co
 
 <!-- STATS:END -->
 
-<img src="assets/banners/divider.svg" width="100%" height="12" alt="" />
+## Technology roadmap
 
-## 04 / Technology & learning
+**Built here:** [Python automation](scripts/update_projects.py), [image processing](scripts/generate_ascii.py), [GitHub API integration](scripts/update_projects.py), [automated checks](tests/) and [GitHub Actions](.github/workflows/update-profile.yml).
 
-**Built in this repository:** [Python automation](scripts/update_projects.py), [image processing](scripts/generate_ascii.py), [API integration](scripts/update_projects.py), [automated checks](tests/) and [GitHub Actions](.github/workflows/update-profile.yml).
-
-**Explore the code:** each project above links directly to its source and reports the primary language and technologies identified by its public metadata.
-
-<details>
-<summary><strong>Explore my technology roadmap across eight disciplines</strong></summary>
+<p>
+  <a href="scripts/update_projects.py"><img src="assets/icons/tech/python.svg" width="36" height="36" alt="Python" /></a> &nbsp;
+  <a href=".github/workflows/update-profile.yml"><img src="assets/icons/tech/githubactions.svg" width="36" height="36" alt="GitHub Actions" /></a> &nbsp;
+  <a href="https://github.com/willamhs/willamhs/commits/main/"><img src="assets/icons/tech/git.svg" width="36" height="36" alt="Git" /></a>
+</p>
 
 <!-- STACK:START -->
 
-These technologies form my **development roadmap**. A logo is not a claim of proficiency. Project links and repository metadata provide the evidence for tools I have used.
+My learning roadmap across the data and AI ecosystem. Explore the source code in my projects for evidence of tools used.
 
-#### Programming & Data Analysis
+<details>
+<summary><strong>Programming & Data Analysis</strong></summary>
 
 <p>
 <img src="assets/icons/tech/python.svg" width="24" height="24" alt="" /> Python &nbsp; · &nbsp;
@@ -177,7 +205,10 @@ SQL &nbsp; · &nbsp;
 <img src="assets/icons/tech/plotly.svg" width="24" height="24" alt="" /> Plotly
 </p>
 
-#### Business Intelligence
+</details>
+
+<details>
+<summary><strong>Business Intelligence</strong></summary>
 
 <p>
 <img src="assets/icons/tech/powerbi.svg" width="24" height="24" alt="" /> Power BI &nbsp; · &nbsp;
@@ -186,7 +217,10 @@ SQL &nbsp; · &nbsp;
 <img src="assets/icons/tech/lookerstudio.svg" width="24" height="24" alt="" /> Looker Studio
 </p>
 
-#### Databases
+</details>
+
+<details>
+<summary><strong>Databases</strong></summary>
 
 <p>
 <img src="assets/icons/tech/postgresql.svg" width="24" height="24" alt="" /> PostgreSQL &nbsp; · &nbsp;
@@ -196,7 +230,10 @@ SQL &nbsp; · &nbsp;
 <img src="assets/icons/tech/redis.svg" width="24" height="24" alt="" /> Redis
 </p>
 
-#### Machine Learning & Deep Learning
+</details>
+
+<details>
+<summary><strong>Machine Learning & Deep Learning</strong></summary>
 
 <p>
 <img src="assets/icons/tech/scikitlearn.svg" width="24" height="24" alt="" /> Scikit-learn &nbsp; · &nbsp;
@@ -208,7 +245,10 @@ SQL &nbsp; · &nbsp;
 <img src="assets/icons/tech/catboost.svg" width="24" height="24" alt="" /> CatBoost
 </p>
 
-#### AI Engineering & Generative AI
+</details>
+
+<details>
+<summary><strong>AI Engineering & Generative AI</strong></summary>
 
 <p>
 <img src="assets/icons/tech/openai.svg" width="24" height="24" alt="" /> OpenAI &nbsp; · &nbsp;
@@ -224,7 +264,10 @@ AI Agents &nbsp; · &nbsp;
 Vector Databases
 </p>
 
-#### Data Engineering
+</details>
+
+<details>
+<summary><strong>Data Engineering</strong></summary>
 
 <p>
 <img src="assets/icons/tech/apachespark.svg" width="24" height="24" alt="" /> Apache Spark &nbsp; · &nbsp;
@@ -237,7 +280,10 @@ ELT &nbsp; · &nbsp;
 Data Warehousing
 </p>
 
-#### Cloud Computing
+</details>
+
+<details>
+<summary><strong>Cloud Computing</strong></summary>
 
 <p>
 <img src="assets/icons/tech/googlecloud.svg" width="24" height="24" alt="" /> Google Cloud Platform (GCP) &nbsp; · &nbsp;
@@ -247,7 +293,10 @@ Data Warehousing
 <img src="assets/icons/tech/azure.svg" width="24" height="24" alt="" /> Microsoft Azure
 </p>
 
-#### DevOps & MLOps
+</details>
+
+<details>
+<summary><strong>DevOps & MLOps</strong></summary>
 
 <p>
 <img src="assets/icons/tech/git.svg" width="24" height="24" alt="" /> Git &nbsp; · &nbsp;
@@ -259,16 +308,23 @@ Data Warehousing
 <img src="assets/icons/tech/terraform.svg" width="24" height="24" alt="" /> Terraform
 </p>
 
+</details>
+
 <sub>Official catalog icons retain their source colors. SQL and architectural concepts use text labels. Vertex AI uses its parent Google Cloud mark; Looker Studio uses the Looker mark. <a href="docs/icon-sources.md">Icon sources and licenses</a>.</sub>
 
 <!-- STACK:END -->
 
-</details>
+## Let's connect
 
-## 05 / Let's build something useful
+<picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/banners/footer-dark-mobile.svg" />
+  <source media="(max-width: 600px)" srcset="assets/banners/footer-light-mobile.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banners/footer-dark.svg" />
+  <img src="assets/banners/footer-light.svg" width="100%" alt="Let's build something useful. Data. Intelligent systems. Knowledge worth sharing." />
+</picture>
 
-Interested in data, AI applications or technology education? Let's connect.
+<p align="center">Open to conversations about early-career opportunities, collaboration and technology education.</p>
 
-**[LinkedIn](https://www.linkedin.com/in/willam-huaman-saavedra/)** &nbsp; · &nbsp; **[Portfolio](https://portafolio-willam.netlify.app/)** &nbsp; · &nbsp; **[U20211E088@upc.edu.pe](mailto:U20211E088@upc.edu.pe)**
+<p align="center"><strong><a href="https://www.linkedin.com/in/willam-huaman-saavedra/">LinkedIn</a> &nbsp; · &nbsp; <a href="https://portafolio-willam.netlify.app/">Portfolio</a> &nbsp; · &nbsp; <a href="mailto:U20211E088@upc.edu.pe">U20211E088@upc.edu.pe</a></strong></p>
 
-<sub>Built with Python, local SVG assets and GitHub Actions. Projects and statistics refresh daily from public GitHub metadata. [Automation & methodology](docs/automation.md) · [Design & portrait](docs/design.md).</sub>
+<p align="center"><sub>Willam | Data & AI &nbsp; · &nbsp; Learn with purpose. Build with care. Share what works.<br /><a href="docs/automation.md">Portfolio automation</a> &nbsp; · &nbsp; <a href="docs/icon-sources.md">Icon credits</a></sub></p>

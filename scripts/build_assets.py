@@ -17,8 +17,10 @@ import requests
 
 try:
     from .common import ROOT, atomic_write, replace_section
+    from .design_profile import build_identity
 except ImportError:
     from common import ROOT, atomic_write, replace_section
+    from design_profile import build_identity
 
 # Devicon 2.17.0, and older Simple Icons marks for brands removed upstream.
 DEV = "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons"
@@ -79,6 +81,7 @@ def download_icon(item):
 
 
 AREA_PATHS = {
+    "dashboard":'<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 10h18M10 10v11m4-4v-3m3 3v-5"/>',
     "analytics":'<path d="M4 20h17M7 16v-5m6 5V5m6 11V8"/>',
     "science":'<path d="M9 3h6m-5 0v7L4 20h16l-6-10V3M7 15h10"/>',
     "neural":'<circle cx="5" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="20" cy="5" r="2"/><circle cx="20" cy="19" r="2"/><path d="m7 6 4 4m2 4 5 4M7 18l4-4m2-4 5-4"/>',
@@ -90,24 +93,6 @@ AREA_PATHS = {
     "mail":'<rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 6 9 7 9-7"/>',
     "globe":'<circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/>',
 }
-
-
-def banner(theme):
-    dark = theme == "dark"
-    bg, ink, muted, line = ("#0A1425","#F8FAFC","#94A3B8","#1E3558") if dark else ("#EFF5FF","#0F172A","#475569","#C8D9F4")
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="330" viewBox="0 0 1100 330" role="img" aria-labelledby="t d">
-<title id="t">Willam | Data &amp; AI</title><desc id="d">Willam Huaman. Computer Science. Peru. A path from data to intelligent systems.</desc>
-<defs><linearGradient id="g"><stop stop-color="{bg}"/><stop offset="1" stop-color="{'#102B55' if dark else '#DCEAFF'}"/></linearGradient><linearGradient id="a" x2="1" y2="1"><stop stop-color="#60A5FA"/><stop offset="1" stop-color="#2563EB"/></linearGradient></defs>
-<rect width="1100" height="330" rx="24" fill="url(#g)"/>
-<g fill="none" stroke="{line}" stroke-width="1.5"><path d="M785 0v70l64 64h251M960 0v54l-70 70v206M1100 236H985l-70-70H805M735 330v-73l67-67"/><circle cx="850" cy="135" r="52"/><circle cx="850" cy="135" r="80"/></g>
-<g fill="#60A5FA"><circle cx="785" cy="70" r="4"/><circle cx="960" cy="54" r="4"/><circle cx="985" cy="236" r="4"/><circle cx="802" cy="190" r="4"/></g>
-<rect x="48" y="46" width="48" height="48" rx="13" fill="url(#a)"/><path d="m57 61 5 19 10-15 10 15 5-19" fill="none" stroke="#F8FAFC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-<g font-family="Arial,Helvetica,sans-serif"><text x="113" y="76" fill="{muted}" font-size="20" letter-spacing="3">WILLAM HUAMÁN</text>
-<text x="48" y="166" fill="{ink}" font-size="66" font-weight="700" letter-spacing="-2">Willam <tspan fill="#60A5FA">|</tspan> Data &amp; AI</text>
-<text x="50" y="222" fill="{ink}" font-size="28">From data to intelligent systems.</text>
-<text x="50" y="286" fill="{muted}" font-size="19" letter-spacing="2">COMPUTER SCIENCE  /  PERU  /  BUILD · LEARN · SHARE</text></g>
-<rect x="48" y="243" width="54" height="3" rx="1.5" fill="url(#a)"/></svg>
-'''
 
 
 SOCIALS = [
@@ -129,18 +114,18 @@ def button(icon, label):
         raw = (ROOT / f"assets/icons/tech/{icon}.svg").read_text(encoding="utf-8")
         raw = re.sub(r'<svg\b[^>]*>', lambda m: re.sub(r'\s(?:width|height)="[^"]*"', '', m.group())[:-1] + ' x="14" y="12" width="20" height="20">', raw, count=1)
         graphic = raw
-    return f'<svg xmlns="http://www.w3.org/2000/svg" width="140" height="44" viewBox="0 0 140 44" role="img" aria-label="{label}"><rect x="0.5" y="0.5" width="139" height="43" rx="10" fill="#0F172A" stroke="#294265"/>{graphic}<text x="44" y="27" fill="#F8FAFC" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="600">{label}</text></svg>\n'
+    return f'<svg xmlns="http://www.w3.org/2000/svg" width="140" height="44" viewBox="0 0 140 44" role="img" aria-label="{label}"><defs><linearGradient id="button-blue" x2="1" y2="1"><stop stop-color="#123B85"/><stop offset="1" stop-color="#2563EB"/></linearGradient></defs><rect x="0.5" y="0.5" width="139" height="43" rx="10" fill="url(#button-blue)" stroke="#60A5FA" stroke-opacity="0.55"/>{graphic}<text x="44" y="27" fill="#F8FAFC" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="600">{label}</text></svg>\n'
 
 
 def stack_markup():
-    chunks = ["These technologies form my **development roadmap**. A logo is not a claim of proficiency. Project links and repository metadata provide the evidence for tools I have used.\n"]
+    chunks = ["My learning roadmap across the data and AI ecosystem. Explore the source code in my projects for evidence of tools used.\n"]
     for title, technologies in GROUPS:
-        chunks.append(f"#### {title}\n\n<p>")
+        chunks.append(f"<details>\n<summary><strong>{title}</strong></summary>\n\n<p>")
         for label, icon in technologies:
             graphic = f'<img src="assets/icons/tech/{icon}.svg" width="24" height="24" alt="" /> ' if icon else ""
             chunks.append(f'{graphic}{escape(label)} &nbsp; · &nbsp;')
         chunks[-1] = chunks[-1].removesuffix(" &nbsp; · &nbsp;")
-        chunks.append("</p>\n")
+        chunks.append("</p>\n\n</details>\n")
     chunks.append('<sub>Official catalog icons retain their source colors. SQL and architectural concepts use text labels. Vertex AI uses its parent Google Cloud mark; Looker Studio uses the Looker mark. <a href="docs/icon-sources.md">Icon sources and licenses</a>.</sub>')
     return "\n".join(chunks)
 
@@ -152,8 +137,7 @@ def main():
     atomic_write(ROOT / "assets/icons/sources.json", json.dumps(manifest, indent=2, sort_keys=True) + "\n")
     for key, path in AREA_PATHS.items():
         atomic_write(ROOT / f"assets/icons/areas/{key}.svg", f'<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">{path}</svg>\n')
-    for theme in ("light","dark"):
-        atomic_write(ROOT / f"assets/banners/header-{theme}.svg", banner(theme))
+    build_identity(AREA_PATHS)
     atomic_write(ROOT / "assets/banners/divider.svg", '<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="12" viewBox="0 0 1100 12"><defs><linearGradient id="g"><stop stop-color="#2563EB"/><stop offset="1" stop-color="#60A5FA" stop-opacity="0.08"/></linearGradient></defs><rect y="5" width="1100" height="2" rx="1" fill="url(#g)"/></svg>\n')
     for icon, label, _ in SOCIALS:
         atomic_write(ROOT / f"assets/icons/social/{icon}.svg", button(icon,label))
